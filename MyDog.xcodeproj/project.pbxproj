@@ -8,24 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD2192497642F001BAD93 /* AppDelegate.swift */; };
-		98FDD21C2497642F001BAD93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD21B2497642F001BAD93 /* SceneDelegate.swift */; };
-		98FDD21E2497642F001BAD93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD21D2497642F001BAD93 /* ViewController.swift */; };
+		98FDD21E2497642F001BAD93 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD21D2497642F001BAD93 /* FirstViewController.swift */; };
 		98FDD2212497642F001BAD93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD21F2497642F001BAD93 /* Main.storyboard */; };
 		98FDD2242497642F001BAD93 /* MyDog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD2222497642F001BAD93 /* MyDog.xcdatamodeld */; };
 		98FDD22624976437001BAD93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD22524976437001BAD93 /* Assets.xcassets */; };
 		98FDD22924976437001BAD93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD22724976437001BAD93 /* LaunchScreen.storyboard */; };
+		98FDD241249BAB8B001BAD93 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD240249BAB8B001BAD93 /* AddPhotoViewController.swift */; };
+		98FDD243249BB999001BAD93 /* DogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD242249BB999001BAD93 /* DogModel.swift */; };
+		98FDD24E24A0E087001BAD93 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD24D24A0E087001BAD93 /* TabBarViewController.swift */; };
+		98FDD25124A0E212001BAD93 /*  NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD24F24A0E212001BAD93 /*  NewsFeed.storyboard */; };
+		98FDD25324A0E231001BAD93 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD25224A0E231001BAD93 /* Info.storyboard */; };
+		98FDD25624A0E278001BAD93 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD25424A0E278001BAD93 /* Events.storyboard */; };
+		98FDD25824A0E2A0001BAD93 /* Reminders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD25724A0E2A0001BAD93 /* Reminders.storyboard */; };
+		98FDD25B24A0E2DD001BAD93 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD25924A0E2DD001BAD93 /* Settings.storyboard */; };
+		98FDD25D24A0F71C001BAD93 /* NewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD25C24A0F71C001BAD93 /* NewFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		98FDD2162497642F001BAD93 /* MyDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDD2192497642F001BAD93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98FDD21B2497642F001BAD93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		98FDD21D2497642F001BAD93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		98FDD21D2497642F001BAD93 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		98FDD2202497642F001BAD93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98FDD2232497642F001BAD93 /* MyDog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyDog.xcdatamodel; sourceTree = "<group>"; };
 		98FDD22524976437001BAD93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98FDD22824976437001BAD93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98FDD22A24976437001BAD93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98FDD240249BAB8B001BAD93 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
+		98FDD242249BB999001BAD93 /* DogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogModel.swift; sourceTree = "<group>"; };
+		98FDD24D24A0E087001BAD93 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		98FDD25024A0E212001BAD93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "MyDog/Base.lproj/ NewsFeed.storyboard"; sourceTree = "<group>"; };
+		98FDD25224A0E231001BAD93 /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		98FDD25524A0E278001BAD93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyDog/Base.lproj/Events.storyboard; sourceTree = "<group>"; };
+		98FDD25724A0E2A0001BAD93 /* Reminders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reminders.storyboard; sourceTree = "<group>"; };
+		98FDD25A24A0E2DD001BAD93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyDog/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		98FDD25C24A0F71C001BAD93 /* NewFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +74,40 @@
 		98FDD2182497642F001BAD93 /* MyDog */ = {
 			isa = PBXGroup;
 			children = (
+				98FDD25E24A0F9F4001BAD93 /* New Feed */,
+				98FDD25F24A1EBD4001BAD93 /* Info */,
 				98FDD2192497642F001BAD93 /* AppDelegate.swift */,
-				98FDD21B2497642F001BAD93 /* SceneDelegate.swift */,
-				98FDD21D2497642F001BAD93 /* ViewController.swift */,
+				98FDD21D2497642F001BAD93 /* FirstViewController.swift */,
+				98FDD240249BAB8B001BAD93 /* AddPhotoViewController.swift */,
+				98FDD24D24A0E087001BAD93 /* TabBarViewController.swift */,
+				98FDD242249BB999001BAD93 /* DogModel.swift */,
 				98FDD21F2497642F001BAD93 /* Main.storyboard */,
+				98FDD25724A0E2A0001BAD93 /* Reminders.storyboard */,
+				98FDD25424A0E278001BAD93 /* Events.storyboard */,
+				98FDD25924A0E2DD001BAD93 /* Settings.storyboard */,
 				98FDD22524976437001BAD93 /* Assets.xcassets */,
 				98FDD22724976437001BAD93 /* LaunchScreen.storyboard */,
 				98FDD22A24976437001BAD93 /* Info.plist */,
 				98FDD2222497642F001BAD93 /* MyDog.xcdatamodeld */,
 			);
 			path = MyDog;
+			sourceTree = "<group>";
+		};
+		98FDD25E24A0F9F4001BAD93 /* New Feed */ = {
+			isa = PBXGroup;
+			children = (
+				98FDD25C24A0F71C001BAD93 /* NewFeedViewController.swift */,
+				98FDD24F24A0E212001BAD93 /*  NewsFeed.storyboard */,
+			);
+			path = "New Feed";
+			sourceTree = "<group>";
+		};
+		98FDD25F24A1EBD4001BAD93 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				98FDD25224A0E231001BAD93 /* Info.storyboard */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +168,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98FDD25124A0E212001BAD93 /*  NewsFeed.storyboard in Resources */,
 				98FDD22924976437001BAD93 /* LaunchScreen.storyboard in Resources */,
 				98FDD22624976437001BAD93 /* Assets.xcassets in Resources */,
+				98FDD25B24A0E2DD001BAD93 /* Settings.storyboard in Resources */,
+				98FDD25824A0E2A0001BAD93 /* Reminders.storyboard in Resources */,
+				98FDD25324A0E231001BAD93 /* Info.storyboard in Resources */,
 				98FDD2212497642F001BAD93 /* Main.storyboard in Resources */,
+				98FDD25624A0E278001BAD93 /* Events.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98FDD21E2497642F001BAD93 /* ViewController.swift in Sources */,
+				98FDD243249BB999001BAD93 /* DogModel.swift in Sources */,
+				98FDD21E2497642F001BAD93 /* FirstViewController.swift in Sources */,
+				98FDD241249BAB8B001BAD93 /* AddPhotoViewController.swift in Sources */,
 				98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */,
+				98FDD24E24A0E087001BAD93 /* TabBarViewController.swift in Sources */,
+				98FDD25D24A0F71C001BAD93 /* NewFeedViewController.swift in Sources */,
 				98FDD2242497642F001BAD93 /* MyDog.xcdatamodeld in Sources */,
-				98FDD21C2497642F001BAD93 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +213,30 @@
 				98FDD22824976437001BAD93 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		98FDD24F24A0E212001BAD93 /*  NewsFeed.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98FDD25024A0E212001BAD93 /* Base */,
+			);
+			name = " NewsFeed.storyboard";
+			sourceTree = "<group>";
+		};
+		98FDD25424A0E278001BAD93 /* Events.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98FDD25524A0E278001BAD93 /* Base */,
+			);
+			name = Events.storyboard;
+			sourceTree = "<group>";
+		};
+		98FDD25924A0E2DD001BAD93 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98FDD25A24A0E2DD001BAD93 /* Base */,
+			);
+			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
