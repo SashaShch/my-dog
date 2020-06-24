@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xrH-lT-iRD">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Лента-->
+        <scene sceneID="izg-tc-8O7">
+            <objects>
+                <viewController id="xrH-lT-iRD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZUd-uD-QQ8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Q6f-me-Bhs"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Лента" id="Evo-Nt-P8r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYx-Zr-Ht9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3283" y="-58"/>
+        </scene>
+    </scenes>
+</document>

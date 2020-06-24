@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NlW-RH-tDh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите имя питомца" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNE-BJ-Qz1">
+                                <rect key="frame" x="50" y="158" width="314" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя питомца" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A9h-ZW-hcv">
+                                <rect key="frame" x="50" y="232" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="s3s-Tb-hQZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Gs6-hE-ZTd"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="A9h-ZW-hcv" firstAttribute="top" secondItem="fNE-BJ-Qz1" secondAttribute="bottom" constant="50" id="Gqu-bx-3jE"/>
+                            <constraint firstItem="A9h-ZW-hcv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="L2M-l7-mhC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A9h-ZW-hcv" secondAttribute="trailing" constant="50" id="TWU-Wb-Se1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fNE-BJ-Qz1" secondAttribute="trailing" constant="50" id="Tx5-4u-1JE"/>
+                            <constraint firstItem="fNE-BJ-Qz1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Zj6-RR-tiz"/>
+                            <constraint firstItem="fNE-BJ-Qz1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="trV-ud-m2v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="O0S-1K-4rl">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="8Gf-2U-MbV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BcI-KY-enA">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Далее"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4io-fR-JRc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dogNameTextField" destination="A9h-ZW-hcv" id="FbW-aQ-YiU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="112.5"/>
+        </scene>
+        <!--Add Photo View Controller-->
+        <scene sceneID="Jff-Yf-kUr">
+            <objects>
+                <viewController storyboardIdentifier="AddPhotoViewController" id="X8P-uM-5os" customClass="AddPhotoViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QET-XO-sOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNJ-sQ-bxP">
+                                <rect key="frame" x="186" y="99" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ekK-na-zQi">
+                                <rect key="frame" x="82" y="196" width="250" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="isr-Li-k4k"/>
+                                    <constraint firstAttribute="height" constant="200" id="zON-KV-mkb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puj-6a-GAo">
+                                <rect key="frame" x="82" y="446" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KKf-7P-rOT"/>
+                                    <constraint firstAttribute="width" constant="250" id="gIQ-Lh-qfF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Загрузить фото"/>
+                                <connections>
+                                    <action selector="addPhotoButtonPressed:" destination="X8P-uM-5os" eventType="touchUpInside" id="BmF-yd-rEE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="puj-6a-GAo" firstAttribute="centerX" secondItem="Jao-ZW-nc4" secondAttribute="centerX" id="1lV-pe-VZn"/>
+                            <constraint firstItem="ZNJ-sQ-bxP" firstAttribute="top" secondItem="Jao-ZW-nc4" secondAttribute="top" constant="55" id="Nfg-pK-qXP"/>
+                            <constraint firstItem="puj-6a-GAo" firstAttribute="top" secondItem="ekK-na-zQi" secondAttribute="bottom" constant="50" id="P3S-Os-rhk"/>
+                            <constraint firstItem="ekK-na-zQi" firstAttribute="top" secondItem="ZNJ-sQ-bxP" secondAttribute="bottom" constant="76" id="kls-Wl-P0C"/>
+                            <constraint firstItem="ZNJ-sQ-bxP" firstAttribute="centerX" secondItem="Jao-ZW-nc4" secondAttribute="centerX" id="wmv-OJ-aw9"/>
+                            <constraint firstItem="ekK-na-zQi" firstAttribute="centerX" secondItem="Jao-ZW-nc4" secondAttribute="centerX" id="zcS-ix-W5g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jao-ZW-nc4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2xV-eG-y3k"/>
+                    <connections>
+                        <outlet property="addPhotoLabel" destination="ZNJ-sQ-bxP" id="8PM-qQ-8Ul"/>
+                        <outlet property="dogPhotoImage" destination="ekK-na-zQi" id="oSZ-wE-jor"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJk-8H-mqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="113"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="823-Is-6bZ">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarController" modalPresentationStyle="fullScreen" id="NlW-RH-tDh" customClass="TabBarViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Hc-7h-1bZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fWM-Tb-rvS" kind="relationship" relationship="viewControllers" id="YGA-F0-XtX"/>
+                        <segue destination="h2v-c7-x7W" kind="relationship" relationship="viewControllers" id="Cyz-VW-j7d"/>
+                        <segue destination="cWj-IB-oUX" kind="relationship" relationship="viewControllers" id="3B6-Jw-s6F"/>
+                        <segue destination="yuS-hu-NwL" kind="relationship" relationship="viewControllers" id="i4w-PD-9aa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EL0-A1-jrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2654" y="112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9zH-hj-gPt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x22-ia-qZo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WqF-Qm-TAN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IuJ-av-TW9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAp-TZ-dZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="JzJ-ft-5zq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="h2v-c7-x7W" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="U0s-ay-xMq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3lO-0Y-lWy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3525" y="283"/>
+        </scene>
+        <!--Remainders-->
+        <scene sceneID="10a-Gp-7x4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Remainders" id="yuS-hu-NwL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="AJP-yV-Vst"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ml-35-JI5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3509" y="225"/>
+        </scene>
+        <!--Информация-->
+        <scene sceneID="dew-Nl-61T">
+            <objects>
+                <viewController id="fWM-Tb-rvS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pPU-Hg-VrZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bBH-8h-abS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Информация" id="HB0-wO-tjX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-pJ-PzS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3584" y="-135"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="ZyR-jq-mAC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Events" id="cWj-IB-oUX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ZNw-TB-kEH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nu6-im-8iu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3509" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="emptyPhoto" width="512" height="512"/>
+    </resources>
+</document>

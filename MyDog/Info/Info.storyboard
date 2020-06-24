@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fWM-Tb-rvS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Информация-->
+        <scene sceneID="dew-Nl-61T">
+            <objects>
+                <viewController id="fWM-Tb-rvS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pPU-Hg-VrZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bBH-8h-abS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Информация" id="HB0-wO-tjX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-pJ-PzS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3584" y="-135"/>
+        </scene>
+    </scenes>
+</document>
