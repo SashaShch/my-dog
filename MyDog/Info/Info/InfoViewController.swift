@@ -11,16 +11,21 @@ import UIKit
 class InfoViewController: UIViewController {
     
     var info = Info()
-    var isEdidting = false
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.reloadData()
     }
 
     @IBAction func editInfoButtonPressed(_ sender: Any) {
-       if isEditing == false {
-            
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "InfoEditViewController") {
+            if let infoEditViewController = vc as? InfoEditViewController {
+                infoEditViewController.delegate = self
+                present(vc, animated: true, completion: nil)
+            }
         }
     }
     
@@ -58,7 +63,8 @@ extension InfoViewController: UITableViewDataSource {
         } else {
             cell.infoLabel.text = info.careInfo[indexPath.item]
         }
-        
+        cell.userInfoLabel.text = info.userInfo[cell.infoLabel.text ?? ""]
+
         cell.layer.borderWidth = 5
         cell.layer.cornerRadius = 10
         cell.layer.borderColor = UIColor(red: 217/255, green: 215/255, blue: 250/255, alpha: 1).cgColor
@@ -77,5 +83,14 @@ extension InfoViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+}
+
+
+extension InfoViewController: InfoEditViewControllerDelegate {
+    func infoEditViewControllerDidGetUserInfo(_ infoUser: [String : String]) {
+        info.userInfo = infoUser
+        print(info.userInfo)
+        tableView.reloadData()
     }
 }

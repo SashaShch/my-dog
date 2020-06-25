@@ -43,7 +43,6 @@
                                         <state key="normal" image="pencil.and.ellipsis.rectangle" catalog="system"/>
                                         <connections>
                                             <action selector="editInfoButtonPressed:" destination="fWM-Tb-rvS" eventType="touchUpInside" id="eA9-ne-c3W"/>
-                                            <segue destination="fhZ-3R-CVi" kind="show" id="d1K-qD-J45"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -115,6 +114,9 @@
                         <viewLayoutGuide key="safeArea" id="bBH-8h-abS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Информация" id="HB0-wO-tjX"/>
+                    <connections>
+                        <outlet property="tableView" destination="xbh-Ef-2lH" id="a9J-Q0-MIY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-pJ-PzS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,13 +125,23 @@
         <!--Info Edit View Controller-->
         <scene sceneID="wd8-uf-t5p">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="fhZ-3R-CVi" customClass="InfoEditViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoEditViewController" id="fhZ-3R-CVi" customClass="InfoEditViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lc7-qf-M8k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gko-fn-5Br">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LuS-kF-l6j"/>
+                                </constraints>
+                                <state key="normal" title="Сохранить"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="fhZ-3R-CVi" eventType="touchUpInside" id="aSg-gl-UQa"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P6F-gI-q2u">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="info edit cell" id="75O-VC-Rhl" customClass="InfoEditTableViewCell" customModule="MyDog" customModuleProvider="target">
@@ -143,6 +155,9 @@
                                                     <rect key="frame" x="10" y="10" width="394" height="34.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="fhZ-3R-CVi" id="nOc-1h-EH3"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -166,9 +181,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="P6F-gI-q2u" firstAttribute="leading" secondItem="64y-A1-bvD" secondAttribute="leading" id="6gj-f5-C0z"/>
-                            <constraint firstItem="P6F-gI-q2u" firstAttribute="top" secondItem="64y-A1-bvD" secondAttribute="top" id="GHz-qj-qJQ"/>
+                            <constraint firstItem="P6F-gI-q2u" firstAttribute="top" secondItem="64y-A1-bvD" secondAttribute="top" constant="50" id="GHz-qj-qJQ"/>
                             <constraint firstItem="64y-A1-bvD" firstAttribute="bottom" secondItem="P6F-gI-q2u" secondAttribute="bottom" id="Uq9-xq-ykP"/>
                             <constraint firstItem="64y-A1-bvD" firstAttribute="trailing" secondItem="P6F-gI-q2u" secondAttribute="trailing" id="bAy-AH-nMC"/>
+                            <constraint firstItem="64y-A1-bvD" firstAttribute="trailing" secondItem="gko-fn-5Br" secondAttribute="trailing" id="f82-Xg-5M3"/>
+                            <constraint firstItem="gko-fn-5Br" firstAttribute="leading" secondItem="64y-A1-bvD" secondAttribute="leading" id="tL4-0B-vZN"/>
+                            <constraint firstItem="gko-fn-5Br" firstAttribute="top" secondItem="64y-A1-bvD" secondAttribute="top" id="tsg-Xw-NjT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="64y-A1-bvD"/>
                     </view>

@@ -8,15 +8,26 @@
 
 import UIKit
 
+protocol InfoEditViewControllerDelegate: AnyObject {
+    func infoEditViewControllerDidGetUserInfo(_ infoUser: [String: String])
+}
+
 class InfoEditViewController: UIViewController {
     
-     var info = Info()
+    weak var delegate: InfoEditViewControllerDelegate?
+    var info = Info()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
 
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        self.view.endEditing(true)
+        delegate?.infoEditViewControllerDidGetUserInfo(info.userInfo)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension InfoEditViewController: UITableViewDataSource {
@@ -66,3 +77,8 @@ extension InfoEditViewController: UITableViewDelegate {
     }
 }
 
+extension InfoEditViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        info.userInfo[textField.placeholder ?? ""] = textField.text
+    }
+}
