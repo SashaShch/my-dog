@@ -16,6 +16,8 @@ class InfoEditViewController: UIViewController {
     
     weak var delegate: InfoEditViewControllerDelegate?
     var info = Info()
+    let defaults = UserDefaults.standard
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,14 @@ class InfoEditViewController: UIViewController {
 
     @IBAction func saveButtonPressed(_ sender: Any) {
         self.view.endEditing(true)
-        delegate?.infoEditViewControllerDidGetUserInfo(info.userInfo)
+        //let defaults = UserDefaults.standard
+        defaults.set(info.userInfo, forKey: "SavedDict")
+        if let savedArray = defaults.object(forKey: "SavedDict") as? [String: String] {
+            delegate?.infoEditViewControllerDidGetUserInfo(savedArray)
+            print(savedArray)
+        }
+    
+        //delegate?.infoEditViewControllerDidGetUserInfo(info.userInfo)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -60,6 +69,12 @@ extension InfoEditViewController: UITableViewDataSource {
         } else {
             cell.infoTextField.placeholder = info.careInfo[indexPath.item]
         }
+        if let savedArray = defaults.object(forKey: "SavedDict") as? [String: String] {
+            if savedArray[cell.infoTextField.placeholder ?? ""] != "" {
+                cell.infoTextField.text = savedArray[cell.infoTextField.placeholder ?? ""]
+            }
+            
+        }
         
         return cell
     }
@@ -80,5 +95,6 @@ extension InfoEditViewController: UITableViewDelegate {
 extension InfoEditViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         info.userInfo[textField.placeholder ?? ""] = textField.text
+        //defaults.set(info.userInfo, forKey: "SavedDict")
     }
 }

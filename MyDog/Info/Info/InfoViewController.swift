@@ -11,18 +11,25 @@ import UIKit
 class InfoViewController: UIViewController {
     
     var info = Info()
+    let defaults = UserDefaults.standard
+
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.reloadData()
+        
+        if let savedArray = defaults.object(forKey: "SavedDict") as? [String: String] {
+            info.userInfo = savedArray
+        }
     }
 
     @IBAction func editInfoButtonPressed(_ sender: Any) {
         
         if let vc = storyboard?.instantiateViewController(withIdentifier: "InfoEditViewController") {
             if let infoEditViewController = vc as? InfoEditViewController {
+                infoEditViewController.info = info
                 infoEditViewController.delegate = self
                 present(vc, animated: true, completion: nil)
             }
@@ -63,8 +70,13 @@ extension InfoViewController: UITableViewDataSource {
         } else {
             cell.infoLabel.text = info.careInfo[indexPath.item]
         }
-        cell.userInfoLabel.text = info.userInfo[cell.infoLabel.text ?? ""]
+        
 
+        if let savedArray = defaults.object(forKey: "SavedDict") as? [String: String] {
+            cell.userInfoLabel.text = savedArray[cell.infoLabel.text ?? ""]
+        }
+        
+        //cell.userInfoLabel.text = info.userInfo[cell.infoLabel.text ?? ""]
         cell.layer.borderWidth = 5
         cell.layer.cornerRadius = 10
         cell.layer.borderColor = UIColor(red: 217/255, green: 215/255, blue: 250/255, alpha: 1).cgColor
