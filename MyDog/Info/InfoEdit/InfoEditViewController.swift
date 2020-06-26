@@ -17,13 +17,41 @@ class InfoEditViewController: UIViewController {
     weak var delegate: InfoEditViewControllerDelegate?
     var info = Info()
     let defaults = UserDefaults.standard
-
-
+    var currentTextField: UITextField?
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(_:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        
+    }
+
+    @objc func keyboardWillShow(_ notification: Notification) {
+        
+        if let userInfo = notification.userInfo {
+            if let keyboardFrame = userInfo["UIKeyboardFrameEndUserInfoKey"] as? CGRect {
+                tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+            }
+        }
     }
     
-
+    @objc func keyboardWillHide(_ notification: Notification) {
+        
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+    }
+    
+    
     @IBAction func saveButtonPressed(_ sender: Any) {
         self.view.endEditing(true)
         //let defaults = UserDefaults.standard
@@ -32,7 +60,7 @@ class InfoEditViewController: UIViewController {
             delegate?.infoEditViewControllerDidGetUserInfo(savedArray)
             print(savedArray)
         }
-    
+        
         //delegate?.infoEditViewControllerDidGetUserInfo(info.userInfo)
         self.dismiss(animated: true, completion: nil)
     }
@@ -75,7 +103,7 @@ extension InfoEditViewController: UITableViewDataSource {
             }
             
         }
-        
+                
         return cell
     }
 }
@@ -83,7 +111,7 @@ extension InfoEditViewController: UITableViewDataSource {
 extension InfoEditViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
-
+        
         
     }
     
@@ -93,8 +121,8 @@ extension InfoEditViewController: UITableViewDelegate {
 }
 
 extension InfoEditViewController: UITextFieldDelegate {
+  
     func textFieldDidEndEditing(_ textField: UITextField) {
         info.userInfo[textField.placeholder ?? ""] = textField.text
-        //defaults.set(info.userInfo, forKey: "SavedDict")
     }
 }

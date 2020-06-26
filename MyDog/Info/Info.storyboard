@@ -62,7 +62,7 @@
                                 <rect key="frame" x="0.0" y="114" width="405" height="748"/>
                                 <color key="backgroundColor" red="0.85098039219999999" green="0.84313725490000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="info cell" id="Fwq-uP-0CC" customClass="InfoTableViewCell" customModule="MyDog" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="info cell" id="Fwq-uP-0CC" customClass="InfoTableViewCell" customModule="MyDog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="405" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fwq-uP-0CC" id="JYW-aq-1QZ">
@@ -75,8 +75,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrz-Zw-rVZ">
-                                                    <rect key="frame" x="289" y="10" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrz-Zw-rVZ">
+                                                    <rect key="frame" x="343" y="10" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="DGl-Ci-T7l" firstAttribute="leading" secondItem="JYW-aq-1QZ" secondAttribute="leading" constant="20" id="Kzz-R6-KZ1"/>
-                                                <constraint firstAttribute="trailing" secondItem="nrz-Zw-rVZ" secondAttribute="trailing" constant="74" id="NQj-DN-Ru2"/>
+                                                <constraint firstAttribute="trailing" secondItem="nrz-Zw-rVZ" secondAttribute="trailing" constant="20" id="NQj-DN-Ru2"/>
                                                 <constraint firstItem="DGl-Ci-T7l" firstAttribute="top" secondItem="JYW-aq-1QZ" secondAttribute="top" constant="10" id="c19-wS-fDq"/>
                                                 <constraint firstItem="nrz-Zw-rVZ" firstAttribute="centerY" secondItem="DGl-Ci-T7l" secondAttribute="centerY" id="zZO-Be-BtK"/>
                                             </constraints>
@@ -191,6 +191,9 @@
                         <viewLayoutGuide key="safeArea" id="64y-A1-bvD"/>
                     </view>
                     <navigationItem key="navigationItem" id="R0W-ag-Em7"/>
+                    <connections>
+                        <outlet property="tableView" destination="P6F-gI-q2u" id="ymc-b1-q0N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2r-9T-iPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
