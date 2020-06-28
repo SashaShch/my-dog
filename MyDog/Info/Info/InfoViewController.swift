@@ -60,24 +60,15 @@ class InfoViewController: UIViewController {
     @IBAction func editInfoButtonPressed(_ sender: Any) {
         view.endEditing(true)
         defaults.set(info.userInfo, forKey: "SavedDict")
+        isEditingInfo = !isEditingInfo
         
-        if isEditingInfo == false {
-            tableView.visibleCells.forEach { cell in
-                guard let cell = cell as? InfoTableViewCell else { return }
-                cell.userInfoTextField.isEnabled = true
-                isEditingInfo = !isEditingInfo
-                saveEditButton.layer.contents = image?.cgImage
-            }
+        if isEditingInfo {
+            saveEditButton.layer.contents = image?.cgImage
         } else {
-            tableView.visibleCells.forEach { cell in
-                guard let cell = cell as? InfoTableViewCell else { return }
-                cell.userInfoTextField.isEnabled = false
-                isEditingInfo = !isEditingInfo
-                saveEditButton.layer.contents = image2?.cgImage
-            }
-            
+            saveEditButton.layer.contents = image2?.cgImage
         }
         
+        tableView.reloadData()
     }
 }
 
@@ -119,6 +110,9 @@ extension InfoViewController: UITableViewDataSource {
         if let savedArray = defaults.object(forKey: "SavedDict") as? [String: String] {
             cell.userInfoTextField.text = savedArray[cell.infoLabel.text ?? ""]
         }
+        
+       
+        cell.userInfoTextField.isEnabled = isEditingInfo
         
         cell.layer.borderWidth = 5
         cell.layer.cornerRadius = 10
