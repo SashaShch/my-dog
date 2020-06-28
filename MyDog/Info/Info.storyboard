@@ -29,18 +29,17 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Информация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZo-fQ-w9E">
-                                        <rect key="frame" x="155" y="13" width="104.5" height="39"/>
+                                        <rect key="frame" x="139" y="13" width="136" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.41409801070000002" green="0.39760513460000002" blue="0.51686695780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rp-U1-DN1">
-                                        <rect key="frame" x="359" y="10" width="45" height="45"/>
+                                        <rect key="frame" x="374" y="20" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="n5l-fl-Ebe"/>
-                                            <constraint firstAttribute="width" constant="45" id="uzq-y8-kPQ"/>
+                                            <constraint firstAttribute="height" constant="30" id="n5l-fl-Ebe"/>
+                                            <constraint firstAttribute="width" constant="30" id="uzq-y8-kPQ"/>
                                         </constraints>
-                                        <state key="normal" image="pencil.and.ellipsis.rectangle" catalog="system"/>
                                         <connections>
                                             <action selector="editInfoButtonPressed:" destination="fWM-Tb-rvS" eventType="touchUpInside" id="eA9-ne-c3W"/>
                                         </connections>
@@ -53,9 +52,10 @@
                                     <constraint firstAttribute="height" constant="70" id="HF7-cT-hRz"/>
                                     <constraint firstItem="kZo-fQ-w9E" firstAttribute="top" secondItem="13R-QU-h14" secondAttribute="top" constant="13" id="KDK-dz-Zpp"/>
                                     <constraint firstItem="kZo-fQ-w9E" firstAttribute="centerX" secondItem="13R-QU-h14" secondAttribute="centerX" id="fvP-SS-cnB"/>
+                                    <constraint firstItem="0Rp-U1-DN1" firstAttribute="leading" relation="lessThanOrEqual" secondItem="kZo-fQ-w9E" secondAttribute="trailing" constant="99" id="hGp-aL-72W"/>
                                     <constraint firstItem="kZo-fQ-w9E" firstAttribute="centerY" secondItem="Ivn-Ma-C3T" secondAttribute="centerY" id="j9Q-wJ-rXC"/>
                                     <constraint firstAttribute="trailing" secondItem="0Rp-U1-DN1" secondAttribute="trailing" constant="10" id="r1d-Zo-1xA"/>
-                                    <constraint firstItem="0Rp-U1-DN1" firstAttribute="top" secondItem="13R-QU-h14" secondAttribute="top" constant="10" id="yw1-wv-Dyh"/>
+                                    <constraint firstItem="0Rp-U1-DN1" firstAttribute="top" secondItem="13R-QU-h14" secondAttribute="top" constant="20" id="yw1-wv-Dyh"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="info cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xbh-Ef-2lH">
@@ -75,23 +75,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrz-Zw-rVZ">
-                                                    <rect key="frame" x="343" y="10" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rhk-77-jwz">
+                                                    <rect key="frame" x="288" y="4" width="97" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="fWM-Tb-rvS" id="LdQ-Mf-ZqD"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="DGl-Ci-T7l" firstAttribute="leading" secondItem="JYW-aq-1QZ" secondAttribute="leading" constant="20" id="Kzz-R6-KZ1"/>
-                                                <constraint firstAttribute="trailing" secondItem="nrz-Zw-rVZ" secondAttribute="trailing" constant="20" id="NQj-DN-Ru2"/>
                                                 <constraint firstItem="DGl-Ci-T7l" firstAttribute="top" secondItem="JYW-aq-1QZ" secondAttribute="top" constant="10" id="c19-wS-fDq"/>
-                                                <constraint firstItem="nrz-Zw-rVZ" firstAttribute="centerY" secondItem="DGl-Ci-T7l" secondAttribute="centerY" id="zZO-Be-BtK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="infoLabel" destination="DGl-Ci-T7l" id="P78-U6-9ET"/>
-                                            <outlet property="userInfoLabel" destination="nrz-Zw-rVZ" id="axq-vS-RJu"/>
+                                            <outlet property="userInfoTextField" destination="Rhk-77-jwz" id="dQt-Al-m7I"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -115,6 +116,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Информация" id="HB0-wO-tjX"/>
                     <connections>
+                        <outlet property="saveEditButton" destination="0Rp-U1-DN1" id="IGP-RB-sCo"/>
                         <outlet property="tableView" destination="xbh-Ef-2lH" id="a9J-Q0-MIY"/>
                     </connections>
                 </viewController>
@@ -202,6 +204,5 @@
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
     </resources>
 </document>

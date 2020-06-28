@@ -15,8 +15,6 @@
 		98164F8124A35350006EDFDE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F8024A35350006EDFDE /* InfoViewController.swift */; };
 		98164F8324A38B34006EDFDE /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F8224A38B34006EDFDE /* InfoTableViewCell.swift */; };
 		98164F8524A38C46006EDFDE /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F8424A38C46006EDFDE /* InfoModel.swift */; };
-		98164F8724A49227006EDFDE /* InfoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F8624A49227006EDFDE /* InfoEditViewController.swift */; };
-		98164F8B24A4928B006EDFDE /* InfoEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F8A24A4928B006EDFDE /* InfoEditTableViewCell.swift */; };
 		98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD2192497642F001BAD93 /* AppDelegate.swift */; };
 		98FDD21E2497642F001BAD93 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD21D2497642F001BAD93 /* FirstViewController.swift */; };
 		98FDD2212497642F001BAD93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD21F2497642F001BAD93 /* Main.storyboard */; };
@@ -40,8 +38,6 @@
 		98164F8024A35350006EDFDE /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		98164F8224A38B34006EDFDE /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		98164F8424A38C46006EDFDE /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
-		98164F8624A49227006EDFDE /* InfoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoEditViewController.swift; sourceTree = "<group>"; };
-		98164F8A24A4928B006EDFDE /* InfoEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoEditTableViewCell.swift; sourceTree = "<group>"; };
 		98FDD2162497642F001BAD93 /* MyDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDD2192497642F001BAD93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98FDD21D2497642F001BAD93 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -96,15 +92,6 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
-		98164F8924A49252006EDFDE /* InfoEdit */ = {
-			isa = PBXGroup;
-			children = (
-				98164F8624A49227006EDFDE /* InfoEditViewController.swift */,
-				98164F8A24A4928B006EDFDE /* InfoEditTableViewCell.swift */,
-			);
-			path = InfoEdit;
-			sourceTree = "<group>";
-		};
 		98FDD20D2497642F001BAD93 = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +144,6 @@
 		98FDD25F24A1EBD4001BAD93 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				98164F8924A49252006EDFDE /* InfoEdit */,
 				98164F8824A49241006EDFDE /* Info */,
 				98164F7B24A34359006EDFDE /* Info.storyboard */,
 				98164F8424A38C46006EDFDE /* InfoModel.swift */,
@@ -272,13 +258,11 @@
 				98FDD241249BAB8B001BAD93 /* AddPhotoViewController.swift in Sources */,
 				98164F8324A38B34006EDFDE /* InfoTableViewCell.swift in Sources */,
 				98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */,
-				98164F8724A49227006EDFDE /* InfoEditViewController.swift in Sources */,
 				98164F8524A38C46006EDFDE /* InfoModel.swift in Sources */,
 				98FDD24E24A0E087001BAD93 /* TabBarViewController.swift in Sources */,
 				98FDD25D24A0F71C001BAD93 /* NewFeedViewController.swift in Sources */,
 				98164F8124A35350006EDFDE /* InfoViewController.swift in Sources */,
 				98FDD2242497642F001BAD93 /* MyDog.xcdatamodeld in Sources */,
-				98164F8B24A4928B006EDFDE /* InfoEditTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

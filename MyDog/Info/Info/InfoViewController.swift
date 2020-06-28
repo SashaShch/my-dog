@@ -12,30 +12,73 @@ class InfoViewController: UIViewController {
     
     var info = Info()
     let defaults = UserDefaults.standard
-
+    var isEditingInfo = false
+    let image = UIImage(systemName: "checkmark")
+    let image2 = UIImage(systemName: "pencil")
+    
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var saveEditButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.reloadData()
         
+        saveEditButton.layer.contents = image2?.cgImage
+        
         if let savedArray = defaults.object(forKey: "SavedDict") as? [String: String] {
             info.userInfo = savedArray
         }
-    }
-
-    @IBAction func editInfoButtonPressed(_ sender: Any) {
         
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "InfoEditViewController") {
-            if let infoEditViewController = vc as? InfoEditViewController {
-                infoEditViewController.info = info
-                infoEditViewController.delegate = self
-                present(vc, animated: true, completion: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(_:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        
+        if let userInfo = notification.userInfo {
+            if let keyboardFrame = userInfo["UIKeyboardFrameEndUserInfoKey"] as? CGRect {
+                tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
             }
         }
     }
     
+    @objc func keyboardWillHide(_ notification: Notification) {
+        
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+    }
+    
+    @IBAction func editInfoButtonPressed(_ sender: Any) {
+        view.endEditing(true)
+        defaults.set(info.userInfo, forKey: "SavedDict")
+        
+        if isEditingInfo == false {
+            tableView.visibleCells.forEach { cell in
+                guard let cell = cell as? InfoTableViewCell else { return }
+                cell.userInfoTextField.isEnabled = true
+                isEditingInfo = !isEditingInfo
+                saveEditButton.layer.contents = image?.cgImage
+            }
+        } else {
+            tableView.visibleCells.forEach { cell in
+                guard let cell = cell as? InfoTableViewCell else { return }
+                cell.userInfoTextField.isEnabled = false
+                isEditingInfo = !isEditingInfo
+                saveEditButton.layer.contents = image2?.cgImage
+            }
+            
+        }
+        
+    }
 }
 
 
@@ -67,16 +110,16 @@ extension InfoViewController: UITableViewDataSource {
         cell = tableView.dequeueReusableCell(withIdentifier: "info cell", for: indexPath) as! InfoTableViewCell
         if indexPath.section == 0 {
             cell.infoLabel.text = info.personInfo[indexPath.item]
+            cell.userInfoTextField.placeholder = info.personInfo[indexPath.item]
         } else {
             cell.infoLabel.text = info.careInfo[indexPath.item]
+            cell.userInfoTextField.placeholder = info.careInfo[indexPath.item]
         }
         
-
         if let savedArray = defaults.object(forKey: "SavedDict") as? [String: String] {
-            cell.userInfoLabel.text = savedArray[cell.infoLabel.text ?? ""]
+            cell.userInfoTextField.text = savedArray[cell.infoLabel.text ?? ""]
         }
         
-        //cell.userInfoLabel.text = info.userInfo[cell.infoLabel.text ?? ""]
         cell.layer.borderWidth = 5
         cell.layer.cornerRadius = 10
         cell.layer.borderColor = UIColor(red: 217/255, green: 215/255, blue: 250/255, alpha: 1).cgColor
@@ -89,8 +132,6 @@ extension InfoViewController: UITableViewDataSource {
 extension InfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
-
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -98,11 +139,9 @@ extension InfoViewController: UITableViewDelegate {
     }
 }
 
-
-extension InfoViewController: InfoEditViewControllerDelegate {
-    func infoEditViewControllerDidGetUserInfo(_ infoUser: [String : String]) {
-        info.userInfo = infoUser
-        print(info.userInfo)
-        tableView.reloadData()
+extension InfoViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        info.userInfo[textField.placeholder ?? ""] = textField.text
     }
 }
