@@ -62,11 +62,11 @@
                                 <rect key="frame" x="0.0" y="114" width="405" height="748"/>
                                 <color key="backgroundColor" red="0.85098039219999999" green="0.84313725490000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="info cell" id="Fwq-uP-0CC" customClass="InfoTableViewCell" customModule="MyDog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="405" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="info cell" rowHeight="65" id="Fwq-uP-0CC" customClass="InfoTableViewCell" customModule="MyDog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="405" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fwq-uP-0CC" id="JYW-aq-1QZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="405" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="405" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGl-Ci-T7l">
@@ -75,9 +75,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rhk-77-jwz">
-                                                    <rect key="frame" x="288" y="4" width="97" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rhk-77-jwz">
+                                                    <rect key="frame" x="20" y="36" width="365" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -86,8 +85,11 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Rhk-77-jwz" secondAttribute="trailing" constant="20" id="G5S-AY-TUO"/>
                                                 <constraint firstItem="DGl-Ci-T7l" firstAttribute="leading" secondItem="JYW-aq-1QZ" secondAttribute="leading" constant="20" id="Kzz-R6-KZ1"/>
+                                                <constraint firstItem="Rhk-77-jwz" firstAttribute="leading" secondItem="JYW-aq-1QZ" secondAttribute="leading" constant="20" id="W34-ET-1ow"/>
                                                 <constraint firstItem="DGl-Ci-T7l" firstAttribute="top" secondItem="JYW-aq-1QZ" secondAttribute="top" constant="10" id="c19-wS-fDq"/>
+                                                <constraint firstItem="Rhk-77-jwz" firstAttribute="top" secondItem="DGl-Ci-T7l" secondAttribute="bottom" constant="5" id="vZv-a0-GhL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -122,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-pJ-PzS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3584" y="-135"/>
+            <point key="canvasLocation" x="3582.608695652174" y="-135.26785714285714"/>
         </scene>
         <!--Info Edit View Controller-->
         <scene sceneID="wd8-uf-t5p">

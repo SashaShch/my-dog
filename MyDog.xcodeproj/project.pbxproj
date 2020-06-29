@@ -92,6 +92,14 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		98164F8C24A9E778006EDFDE /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				98164F7624A342AA006EDFDE /* Events.storyboard */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		98FDD20D2497642F001BAD93 = {
 			isa = PBXGroup;
 			children = (
@@ -115,13 +123,13 @@
 			children = (
 				98FDD25E24A0F9F4001BAD93 /* New Feed */,
 				98FDD25F24A1EBD4001BAD93 /* Info */,
+				98164F8C24A9E778006EDFDE /* Events */,
 				98FDD2192497642F001BAD93 /* AppDelegate.swift */,
 				98FDD21D2497642F001BAD93 /* FirstViewController.swift */,
 				98FDD240249BAB8B001BAD93 /* AddPhotoViewController.swift */,
 				98FDD24D24A0E087001BAD93 /* TabBarViewController.swift */,
 				98FDD242249BB999001BAD93 /* DogModel.swift */,
 				98FDD21F2497642F001BAD93 /* Main.storyboard */,
-				98164F7624A342AA006EDFDE /* Events.storyboard */,
 				98164F7324A3423C006EDFDE /* Remainders.storyboard */,
 				98FDD25924A0E2DD001BAD93 /* Settings.storyboard */,
 				98FDD22524976437001BAD93 /* Assets.xcassets */,
