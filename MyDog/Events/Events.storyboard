@@ -1,22 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q2e-vX-gk0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--События-->
         <scene sceneID="Ztd-zU-TNB">
             <objects>
-                <viewController id="q2e-vX-gk0" sceneMemberID="viewController">
+                <viewController id="q2e-vX-gk0" customClass="EventsViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2JG-vD-YdK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yP3-GE-rte">
+                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.84313725490000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="6CX-JG-aA5"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VTx-jT-GvH">
+                                <rect key="frame" x="0.0" y="114" width="414" height="748"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T6j-B0-hYp">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Event Cell" id="NRS-cQ-MxJ" customClass="EventCell" customModule="MyDog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Aqn-Va-sgn">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e91-Gv-egw">
+                                                    <rect key="frame" x="5" y="102" width="37.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.74714383080000002" green="0.94266280820000004" blue="0.86050631399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="e91-Gv-egw" firstAttribute="leading" secondItem="Aqn-Va-sgn" secondAttribute="leading" constant="5" id="gnm-vK-YN4"/>
+                                                <constraint firstAttribute="bottom" secondItem="e91-Gv-egw" secondAttribute="bottom" constant="8" id="zfU-dM-HMP"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventLabel" destination="e91-Gv-egw" id="Nuc-7p-vcf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="q2e-vX-gk0" id="KUC-ug-uav"/>
+                                    <outlet property="delegate" destination="q2e-vX-gk0" id="Q9M-ll-gyq"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ulu-w2-sMy" firstAttribute="trailing" secondItem="yP3-GE-rte" secondAttribute="trailing" id="1HT-Ms-Dal"/>
+                            <constraint firstItem="Ulu-w2-sMy" firstAttribute="bottom" secondItem="VTx-jT-GvH" secondAttribute="bottom" id="8Ea-S6-oDg"/>
+                            <constraint firstItem="Ulu-w2-sMy" firstAttribute="top" secondItem="yP3-GE-rte" secondAttribute="top" id="I4q-X6-CrA"/>
+                            <constraint firstItem="yP3-GE-rte" firstAttribute="leading" secondItem="Ulu-w2-sMy" secondAttribute="leading" id="Nla-xw-nGE"/>
+                            <constraint firstItem="VTx-jT-GvH" firstAttribute="top" secondItem="yP3-GE-rte" secondAttribute="bottom" id="QqU-aS-86a"/>
+                            <constraint firstItem="Ulu-w2-sMy" firstAttribute="trailing" secondItem="VTx-jT-GvH" secondAttribute="trailing" id="wLi-cM-OWs"/>
+                            <constraint firstItem="VTx-jT-GvH" firstAttribute="leading" secondItem="Ulu-w2-sMy" secondAttribute="leading" id="xPA-VN-4ny"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ulu-w2-sMy"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="События" id="K8r-xs-fmV"/>
+                    <connections>
+                        <outlet property="collectionView" destination="VTx-jT-GvH" id="Fge-Rg-ADp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5m-hx-5uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
