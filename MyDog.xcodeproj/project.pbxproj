@@ -18,6 +18,10 @@
 		98164F8E24AA09EB006EDFDE /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F8D24AA09EB006EDFDE /* EventsViewController.swift */; };
 		98164F9024AA0A08006EDFDE /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F8F24AA0A08006EDFDE /* EventCell.swift */; };
 		98164F9224AA0B49006EDFDE /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F9124AA0B49006EDFDE /* EventsModel.swift */; };
+		98164F9424AA233B006EDFDE /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F9324AA233B006EDFDE /* EventInfoViewController.swift */; };
+		98164F9724AB3AC0006EDFDE /* DogsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F9624AB3AC0006EDFDE /* DogsEvent.swift */; };
+		98164F9A24AB5389006EDFDE /* NewFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F9824AB5389006EDFDE /* NewFeedTableViewCell.swift */; };
+		98164F9B24AB5389006EDFDE /* NewFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98164F9924AB5389006EDFDE /* NewFeedTableViewCell.xib */; };
 		98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD2192497642F001BAD93 /* AppDelegate.swift */; };
 		98FDD21E2497642F001BAD93 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD21D2497642F001BAD93 /* FirstViewController.swift */; };
 		98FDD2212497642F001BAD93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD21F2497642F001BAD93 /* Main.storyboard */; };
@@ -44,6 +48,10 @@
 		98164F8D24AA09EB006EDFDE /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		98164F8F24AA0A08006EDFDE /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		98164F9124AA0B49006EDFDE /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
+		98164F9324AA233B006EDFDE /* EventInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
+		98164F9624AB3AC0006EDFDE /* DogsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsEvent.swift; sourceTree = "<group>"; };
+		98164F9824AB5389006EDFDE /* NewFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedTableViewCell.swift; sourceTree = "<group>"; };
+		98164F9924AB5389006EDFDE /* NewFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFeedTableViewCell.xib; sourceTree = "<group>"; };
 		98FDD2162497642F001BAD93 /* MyDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDD2192497642F001BAD93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98FDD21D2497642F001BAD93 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -101,12 +109,22 @@
 		98164F8C24A9E778006EDFDE /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				98164F9524AB3A96006EDFDE /* Models */,
 				98164F7624A342AA006EDFDE /* Events.storyboard */,
 				98164F8D24AA09EB006EDFDE /* EventsViewController.swift */,
 				98164F8F24AA0A08006EDFDE /* EventCell.swift */,
-				98164F9124AA0B49006EDFDE /* EventsModel.swift */,
+				98164F9324AA233B006EDFDE /* EventInfoViewController.swift */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		98164F9524AB3A96006EDFDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98164F9124AA0B49006EDFDE /* EventsModel.swift */,
+				98164F9624AB3AC0006EDFDE /* DogsEvent.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		98FDD20D2497642F001BAD93 = {
@@ -154,6 +172,8 @@
 			children = (
 				98FDD25C24A0F71C001BAD93 /* NewFeedViewController.swift */,
 				98164F7D24A34398006EDFDE /* NewsFeed.storyboard */,
+				98164F9824AB5389006EDFDE /* NewFeedTableViewCell.swift */,
+				98164F9924AB5389006EDFDE /* NewFeedTableViewCell.xib */,
 			);
 			path = "New Feed";
 			sourceTree = "<group>";
@@ -233,6 +253,7 @@
 				98164F7F24A34398006EDFDE /* NewsFeed.storyboard in Resources */,
 				98FDD22624976437001BAD93 /* Assets.xcassets in Resources */,
 				98FDD25B24A0E2DD001BAD93 /* Settings.storyboard in Resources */,
+				98164F9B24AB5389006EDFDE /* NewFeedTableViewCell.xib in Resources */,
 				98FDD2212497642F001BAD93 /* Main.storyboard in Resources */,
 				98164F7724A342AA006EDFDE /* Events.storyboard in Resources */,
 			);
@@ -276,11 +297,14 @@
 				98FDD21E2497642F001BAD93 /* FirstViewController.swift in Sources */,
 				98FDD241249BAB8B001BAD93 /* AddPhotoViewController.swift in Sources */,
 				98164F9024AA0A08006EDFDE /* EventCell.swift in Sources */,
+				98164F9A24AB5389006EDFDE /* NewFeedTableViewCell.swift in Sources */,
 				98164F8324A38B34006EDFDE /* InfoTableViewCell.swift in Sources */,
 				98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */,
 				98164F8524A38C46006EDFDE /* InfoModel.swift in Sources */,
+				98164F9724AB3AC0006EDFDE /* DogsEvent.swift in Sources */,
 				98FDD24E24A0E087001BAD93 /* TabBarViewController.swift in Sources */,
 				98FDD25D24A0F71C001BAD93 /* NewFeedViewController.swift in Sources */,
+				98164F9424AA233B006EDFDE /* EventInfoViewController.swift in Sources */,
 				98164F8124A35350006EDFDE /* InfoViewController.swift in Sources */,
 				98FDD2242497642F001BAD93 /* MyDog.xcdatamodeld in Sources */,
 			);

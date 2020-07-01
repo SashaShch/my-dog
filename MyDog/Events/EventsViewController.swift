@@ -43,7 +43,7 @@ extension EventsViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Event Cell", for: indexPath) as! EventCell
         
-        cell.eventLabel.text = events.events[indexPath.item]
+        cell.eventLabel.text = events.events[indexPath.item].title
         //cell.imageView.image = UIImage(named: item.name)
         
         return cell
@@ -85,16 +85,13 @@ extension EventsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension EventsViewController: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let item = CatModel.itemList[indexPath.section][indexPath.item]
-//        
-//        if let vc = self.storyboard?.instantiateViewController(identifier: "InfoViewController") as InfoViewController? {
-//            vc.cat = item
-//            
-//            navigationController?.pushViewController(vc, animated: true)
-//            
-//            
-//            
-//            }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = events.events[indexPath.item]
+        
+        if let vc = self.storyboard?.instantiateViewController(identifier: "EventInfoViewController") as EventInfoViewController? {
+            vc.dogsEvent = item
+            present(vc, animated: true, completion: nil)
+            
+            }
+    }
 }
