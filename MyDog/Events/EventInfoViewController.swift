@@ -12,6 +12,7 @@ import CoreData
 class EventInfoViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     
     var dogsEvent = DogsEvent(title: "", date: "", comment: "")
+    var goToNewFeed: (() -> Void)?
 
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -61,10 +62,7 @@ class EventInfoViewController: UIViewController, UIImagePickerControllerDelegate
         
         createCitiesAndCountries(type: titleLable.text ?? "", time: dateLabel.text ?? "", comment: commentsTextView.text ?? "", photo: ((photoImage.image ?? UIImage(named: "emptyPhoto"))!))
         
-        let newsFeedStoryboard = UIStoryboard(name: "NewsFeed", bundle: Bundle.main)
-        if let vc = newsFeedStoryboard.instantiateViewController(identifier: "NewFeedViewController") as NewFeedViewController? {
-        present(vc, animated: true, completion: nil)
-        }
+        goToNewFeed?()
     }
     
     @IBAction func addPhotoButtonPressed(_ sender: Any) {

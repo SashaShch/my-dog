@@ -90,6 +90,10 @@ extension EventsViewController: UICollectionViewDelegate {
         
         if let vc = self.storyboard?.instantiateViewController(identifier: "EventInfoViewController") as EventInfoViewController? {
             vc.dogsEvent = item
+            vc.goToNewFeed = {
+                self.tabBarController?.selectedIndex = 0
+                vc.dismiss(animated: true, completion:nil)
+            }
             present(vc, animated: true, completion: nil)
             
             }
