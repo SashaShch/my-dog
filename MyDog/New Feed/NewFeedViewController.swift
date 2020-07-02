@@ -20,18 +20,26 @@ class NewFeedViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "NewFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "New Feed")
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateData()
+    }
+    
+    func updateData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        
+       
         let request = NSFetchRequest<NSManagedObject>(entityName: "Event")
-        
+       
         do {
-            let eventList = try context.fetch(request) as! [Event]
-            events = eventList
+           let eventList = try context.fetch(request) as! [Event]
+           events = eventList
         } catch {
-            print("Error")
+           print("Error")
         }
+        
+        tableView.reloadData()
     }
     
 }
