@@ -22,6 +22,7 @@
 		98164F9724AB3AC0006EDFDE /* DogsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F9624AB3AC0006EDFDE /* DogsEvent.swift */; };
 		98164F9A24AB5389006EDFDE /* NewFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F9824AB5389006EDFDE /* NewFeedTableViewCell.swift */; };
 		98164F9B24AB5389006EDFDE /* NewFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98164F9924AB5389006EDFDE /* NewFeedTableViewCell.xib */; };
+		98164F9D24AE0C5F006EDFDE /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164F9C24AE0C5F006EDFDE /* NewEventViewController.swift */; };
 		98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD2192497642F001BAD93 /* AppDelegate.swift */; };
 		98FDD21E2497642F001BAD93 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD21D2497642F001BAD93 /* FirstViewController.swift */; };
 		98FDD2212497642F001BAD93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD21F2497642F001BAD93 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		98164F9624AB3AC0006EDFDE /* DogsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsEvent.swift; sourceTree = "<group>"; };
 		98164F9824AB5389006EDFDE /* NewFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedTableViewCell.swift; sourceTree = "<group>"; };
 		98164F9924AB5389006EDFDE /* NewFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFeedTableViewCell.xib; sourceTree = "<group>"; };
+		98164F9C24AE0C5F006EDFDE /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		98FDD2162497642F001BAD93 /* MyDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDD2192497642F001BAD93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98FDD21D2497642F001BAD93 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -109,11 +111,9 @@
 		98164F8C24A9E778006EDFDE /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				98164F9F24AE0C81006EDFDE /* Controllers */,
+				98164F9E24AE0C68006EDFDE /* Views */,
 				98164F9524AB3A96006EDFDE /* Models */,
-				98164F7624A342AA006EDFDE /* Events.storyboard */,
-				98164F8D24AA09EB006EDFDE /* EventsViewController.swift */,
-				98164F8F24AA0A08006EDFDE /* EventCell.swift */,
-				98164F9324AA233B006EDFDE /* EventInfoViewController.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -125,6 +125,25 @@
 				98164F9624AB3AC0006EDFDE /* DogsEvent.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		98164F9E24AE0C68006EDFDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				98164F7624A342AA006EDFDE /* Events.storyboard */,
+				98164F8F24AA0A08006EDFDE /* EventCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		98164F9F24AE0C81006EDFDE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				98164F8D24AA09EB006EDFDE /* EventsViewController.swift */,
+				98164F9324AA233B006EDFDE /* EventInfoViewController.swift */,
+				98164F9C24AE0C5F006EDFDE /* NewEventViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		98FDD20D2497642F001BAD93 = {
@@ -297,6 +316,7 @@
 				98FDD21E2497642F001BAD93 /* FirstViewController.swift in Sources */,
 				98FDD241249BAB8B001BAD93 /* AddPhotoViewController.swift in Sources */,
 				98164F9024AA0A08006EDFDE /* EventCell.swift in Sources */,
+				98164F9D24AE0C5F006EDFDE /* NewEventViewController.swift in Sources */,
 				98164F9A24AB5389006EDFDE /* NewFeedTableViewCell.swift in Sources */,
 				98164F8324A38B34006EDFDE /* InfoTableViewCell.swift in Sources */,
 				98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */,

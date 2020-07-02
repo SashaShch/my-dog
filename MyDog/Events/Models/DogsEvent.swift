@@ -9,7 +9,7 @@
 import UIKit
 
 class DogsEvent {
-    let title: String
+    var title: String
     let date: String
     let comment: String
     

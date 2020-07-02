@@ -18,6 +18,7 @@ class NewFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.register(UINib(nibName: "NewFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "New Feed")
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -32,7 +33,6 @@ class NewFeedViewController: UIViewController {
             print("Error")
         }
     }
-    
     
 }
 
@@ -66,7 +66,6 @@ extension NewFeedViewController: UITableViewDataSource {
             let dogPhoto = UIImage(data: data)
             cell.dogPhotoImage.image = dogPhoto
         }
-
         return cell
     }
 }
