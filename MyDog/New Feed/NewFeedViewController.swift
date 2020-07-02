@@ -10,33 +10,38 @@ import UIKit
 import CoreData
 
 class NewFeedViewController: UIViewController {
-
-    var events = [(String,String,String,Data)]()
+    
+    var events = [Event]()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "NewFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "New Feed")
-    }
-    
-
-}
-
-
-extension NewFeedViewController: UITableViewDataSource {
-
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
         let request = NSFetchRequest<NSManagedObject>(entityName: "Event")
         
-        let eventList = try? context.fetch(request)
+        do {
+            let eventList = try context.fetch(request) as! [Event]
+            events = eventList
+        } catch {
+            print("Error")
+        }
+    }
+    
+    
+}
+
+
+extension NewFeedViewController: UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return eventList?.count ?? 1
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,25 +49,13 @@ extension NewFeedViewController: UITableViewDataSource {
         var cell: NewFeedTableViewCell
         cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! NewFeedTableViewCell
         
-
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                let context = appDelegate.persistentContainer.viewContext
+        let event = events[indexPath.item]
+        cell.eventTypeLabel.text = event.value(forKey: "type") as? String
+        cell.dateCommentLabel.text = "\(event.value(forKey: "date") as! String) \(event.value(forKey: "comment") as! String)"
         
-                let request = NSFetchRequest<NSManagedObject>(entityName: "Event")
-        
-                do {
-                    let eventList = try context.fetch(request)
-                    
-                    let event = eventList[indexPath.item]
-                    cell.eventTypeLabel.text = event.value(forKey: "type") as? String
-                    cell.dateCommentLabel.text = "\(event.value(forKey: "date") as! String) \(event.value(forKey: "comment") as! String)"
-                    
-                    let data = event.value(forKey: "photo") as! Data
-                    let image = UIImage(data: data)
-                    cell.eventPhotoImage.image = image
-                } catch {
-                    print("Error")
-                }
+        let data = event.value(forKey: "photo") as! Data
+        let image = UIImage(data: data)
+        cell.eventPhotoImage.image = image
         
         return cell
     }
@@ -70,6 +63,6 @@ extension NewFeedViewController: UITableViewDataSource {
 
 extension NewFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-           return 300
-       }
+        return 300
+    }
 }

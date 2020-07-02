@@ -14,7 +14,7 @@ struct Events {
                   DogsEvent(title: "Осмотр", date: "", comment: ""),
                   DogsEvent(title: "Прогулка", date: "", comment: ""),
                   DogsEvent(title: "Контроль", date: "", comment: ""),
-                  DogsEvent(title: "Грунинг", date: "", comment: ""),
+                  DogsEvent(title: "Груминг", date: "", comment: ""),
                   DogsEvent(title: "Купание", date: "", comment: ""),
                   DogsEvent(title: "Тренировка", date: "", comment: ""),
                   DogsEvent(title: "Прививки", date: "", comment: ""),

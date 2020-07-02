@@ -34,7 +34,7 @@ class EventInfoViewController: UIViewController, UIImagePickerControllerDelegate
 
     }
     
-    func createCitiesAndCountries(type: String, time: String, comment: String, photo: UIImage) {
+    func createEvent(type: String, time: String, comment: String, photo: UIImage) {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             
@@ -60,7 +60,7 @@ class EventInfoViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         
-        createCitiesAndCountries(type: titleLable.text ?? "", time: dateLabel.text ?? "", comment: commentsTextView.text ?? "", photo: ((photoImage.image ?? UIImage(named: "emptyPhoto"))!))
+        createEvent(type: titleLable.text ?? "", time: dateLabel.text ?? "", comment: commentsTextView.text ?? "", photo: ((photoImage.image ?? UIImage(named: "emptyPhoto"))!))
         
         goToNewFeed?()
     }
