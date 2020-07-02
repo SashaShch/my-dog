@@ -11,7 +11,8 @@ import UIKit
 class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     
     var dog = Dog(name: "")
-
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var addPhotoLabel: UILabel!
     @IBOutlet weak var dogPhotoImage: UIImageView!
     
@@ -20,10 +21,10 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate 
         addPhotoLabel.text = dog.name
         
         let rightButtonItem = UIBarButtonItem.init(
-              title: "Сохранить",
-              style: .done,
-              target: self,
-              action: #selector(rightButtonAction(sender:))
+            title: "Сохранить",
+            style: .done,
+            target: self,
+            action: #selector(rightButtonAction(sender:))
         )
         self.navigationItem.rightBarButtonItem = rightButtonItem
     }
@@ -49,12 +50,16 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate 
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
-                                  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-           
-           if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-               dogPhotoImage.image = image
-               dismiss(animated:true, completion: nil)
-           }
-       }
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            dogPhotoImage.image = image
+            if let data = dogPhotoImage.image?.pngData() {
+                defaults.set(data, forKey: "DogPhoto")
+            }
+
+            dismiss(animated:true, completion: nil)
+        }
+    }
     
 }

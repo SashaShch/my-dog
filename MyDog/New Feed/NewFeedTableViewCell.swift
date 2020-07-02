@@ -11,9 +11,11 @@ import UIKit
 class NewFeedTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var dogName: UILabel!
     @IBOutlet weak var eventTypeLabel: UILabel!
     @IBOutlet weak var dateCommentLabel: UILabel!
     @IBOutlet weak var eventPhotoImage: UIImageView!
+    @IBOutlet weak var dogPhotoImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

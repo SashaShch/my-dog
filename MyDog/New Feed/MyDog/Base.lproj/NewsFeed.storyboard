@@ -25,15 +25,8 @@
                                             <constraint firstAttribute="height" constant="70" id="6qe-uB-7a4"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAz-Hw-7Tz">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="50"/>
-                                        <color key="backgroundColor" red="0.74714383080000002" green="0.94266280820000004" blue="0.86050631399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="7Of-r7-G08"/>
-                                        </constraints>
-                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I0L-DZ-1Xq">
-                                        <rect key="frame" x="0.0" y="120" width="414" height="698"/>
+                                        <rect key="frame" x="0.0" y="70" width="414" height="748"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="New Feed" id="MLH-uF-W2g" customClass="NewFeedTableViewCell" customModule="MyDog" customModuleProvider="target">
@@ -53,16 +46,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="gAz-Hw-7Tz" firstAttribute="top" secondItem="KVr-35-bvX" secondAttribute="bottom" id="53M-sE-dqD"/>
+                                    <constraint firstItem="I0L-DZ-1Xq" firstAttribute="top" secondItem="KVr-35-bvX" secondAttribute="bottom" id="KV1-qe-M9J"/>
                                     <constraint firstAttribute="trailing" secondItem="I0L-DZ-1Xq" secondAttribute="trailing" id="XvP-th-8JG"/>
                                     <constraint firstAttribute="trailing" secondItem="KVr-35-bvX" secondAttribute="trailing" id="dd5-G6-PZC"/>
-                                    <constraint firstItem="I0L-DZ-1Xq" firstAttribute="top" secondItem="gAz-Hw-7Tz" secondAttribute="bottom" id="h4M-ku-SeI"/>
                                     <constraint firstAttribute="bottom" secondItem="I0L-DZ-1Xq" secondAttribute="bottom" id="jRw-WI-hLV"/>
                                     <constraint firstItem="KVr-35-bvX" firstAttribute="leading" secondItem="Kwf-ss-Oes" secondAttribute="leading" id="ooc-B7-DUh"/>
                                     <constraint firstItem="I0L-DZ-1Xq" firstAttribute="leading" secondItem="Kwf-ss-Oes" secondAttribute="leading" id="p7M-64-PEA"/>
                                     <constraint firstItem="KVr-35-bvX" firstAttribute="top" secondItem="Kwf-ss-Oes" secondAttribute="top" id="sCQ-Vm-dcd"/>
-                                    <constraint firstAttribute="trailing" secondItem="gAz-Hw-7Tz" secondAttribute="trailing" id="tif-aK-7B1"/>
-                                    <constraint firstItem="gAz-Hw-7Tz" firstAttribute="leading" secondItem="Kwf-ss-Oes" secondAttribute="leading" id="v8i-gF-8MU"/>
                                 </constraints>
                             </view>
                         </subviews>

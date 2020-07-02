@@ -12,6 +12,7 @@ import CoreData
 class NewFeedViewController: UIViewController {
     
     var events = [Event]()
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -57,6 +58,15 @@ extension NewFeedViewController: UITableViewDataSource {
         let image = UIImage(data: data)
         cell.eventPhotoImage.image = image
         
+        if let dogName = defaults.object(forKey: "DogName") as? String {
+            cell.dogName.text = dogName
+        }
+        
+        if let data = defaults.object(forKey: "DogPhoto") as? Data {
+            let dogPhoto = UIImage(data: data)
+            cell.dogPhotoImage.image = dogPhoto
+        }
+
         return cell
     }
 }

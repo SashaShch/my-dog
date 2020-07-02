@@ -66,6 +66,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateCommentLabel" destination="S9N-67-mf0" id="ZdH-em-W7Z"/>
+                <outlet property="dogName" destination="XzD-Im-5w6" id="lxI-l9-X5O"/>
+                <outlet property="dogPhotoImage" destination="wyr-E5-rDc" id="qix-yD-fzP"/>
                 <outlet property="eventPhotoImage" destination="now-N4-OTx" id="6u8-In-j2q"/>
                 <outlet property="eventTypeLabel" destination="ZO2-f4-sSQ" id="UWl-Ea-Hpg"/>
             </connections>

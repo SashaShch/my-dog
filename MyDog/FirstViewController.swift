@@ -11,6 +11,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
+    let defaults = UserDefaults.standard
     var dog = Dog(name: "")
     
     @IBOutlet weak var dogNameTextField: UITextField!
@@ -24,6 +25,7 @@ class FirstViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "AddPhotoViewController") as! AddPhotoViewController
         dog.name = dogNameTextField.text ?? ""
         vc.dog = dog
+        defaults.set(dog.name, forKey: "DogName")
         navigationController?.pushViewController(vc, animated: true)
     }
 }
