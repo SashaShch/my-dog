@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lPk-Pg-wPZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Напоминания-->
+        <scene sceneID="Zcj-A1-mXV">
+            <objects>
+                <viewController id="M3n-f1-FoW" customClass="RemaindersViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gCB-Xz-ubH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fMV-8w-TbT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="New Remainder" id="g1n-2n-kSB">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g1n-2n-kSB" id="WJn-X0-Gfi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M3n-f1-FoW" id="85m-wQ-fsV"/>
+                                    <outlet property="delegate" destination="M3n-f1-FoW" id="J9d-yI-X8s"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4k1-0B-FFt" firstAttribute="bottom" secondItem="fMV-8w-TbT" secondAttribute="bottom" id="08T-H0-bnO"/>
+                            <constraint firstItem="4k1-0B-FFt" firstAttribute="trailing" secondItem="fMV-8w-TbT" secondAttribute="trailing" id="NcH-aI-MaN"/>
+                            <constraint firstItem="fMV-8w-TbT" firstAttribute="leading" secondItem="4k1-0B-FFt" secondAttribute="leading" id="OTM-7X-ONP"/>
+                            <constraint firstItem="fMV-8w-TbT" firstAttribute="top" secondItem="4k1-0B-FFt" secondAttribute="top" id="i9e-4d-3bM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4k1-0B-FFt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Напоминания" id="Prd-Ik-IIb">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="NiU-l0-3SE">
+                            <color key="tintColor" red="0.41409801070000002" green="0.39760513460000002" blue="0.51686695780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="M3n-f1-FoW" id="aGs-QS-gDp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fMV-8w-TbT" id="PEA-Ed-rgC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qx-Lk-pxI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4389.855072463768" y="-33.482142857142854"/>
+        </scene>
+        <!--Remainder Info View Controller-->
+        <scene sceneID="ENr-3I-fTN">
+            <objects>
+                <viewController storyboardIdentifier="RemaindersInfo" id="MQJ-Y4-dGv" customClass="RemainderInfoViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X0g-My-02T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="96h-iM-HfN">
+                                <rect key="frame" x="20" y="114" width="374" height="230"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ktu-7L-kxK">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Oby-r1-LGq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="MQJ-Y4-dGv" id="uw7-Lj-d1V"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Дата" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jnz-5c-QBf">
+                                        <rect key="frame" x="0.0" y="90" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PLr-Se-bj5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="MQJ-Y4-dGv" id="j57-zF-8T7"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Время" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-5V-qmd">
+                                        <rect key="frame" x="0.0" y="180" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="dz3-jc-9kz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="MQJ-Y4-dGv" id="wZ7-nT-m4O"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="96h-iM-HfN" firstAttribute="top" secondItem="Uhq-U0-Vdf" secondAttribute="top" constant="70" id="3cQ-Tv-b9c"/>
+                            <constraint firstItem="96h-iM-HfN" firstAttribute="leading" secondItem="Uhq-U0-Vdf" secondAttribute="leading" constant="20" id="Nfh-EC-5da"/>
+                            <constraint firstItem="Uhq-U0-Vdf" firstAttribute="trailing" secondItem="96h-iM-HfN" secondAttribute="trailing" constant="20" id="h3i-Tz-bCL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uhq-U0-Vdf"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateTextField" destination="Jnz-5c-QBf" id="nCF-P1-HN0"/>
+                        <outlet property="timeTextField" destination="zhd-5V-qmd" id="BAt-j4-XdA"/>
+                        <outlet property="titleTextField" destination="ktu-7L-kxK" id="tM7-oR-BO3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxS-TY-JbB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5018.840579710145" y="-36.160714285714285"/>
+        </scene>
+        <!--Напоминания-->
+        <scene sceneID="Ze4-fp-zAQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lPk-Pg-wPZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Напоминания" id="q7d-q1-2T4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2su-0S-mbm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="M3n-f1-FoW" kind="relationship" relationship="rootViewController" id="yR3-WQ-RMD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVj-Cf-fFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3479.7101449275365" y="-33.482142857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
