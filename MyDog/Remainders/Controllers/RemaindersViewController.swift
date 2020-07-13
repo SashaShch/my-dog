@@ -22,7 +22,6 @@ class RemaindersViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         if let decoded = defaults.object(forKey: "RemaindersList") as? NSData {
             let array = NSKeyedUnarchiver.unarchiveObject(with: decoded as Data) as! [Remainder]
             remaindersList = array

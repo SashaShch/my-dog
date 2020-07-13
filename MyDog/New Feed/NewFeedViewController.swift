@@ -8,22 +8,41 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class NewFeedViewController: UIViewController {
     
     var events = [Event]()
     let defaults = UserDefaults.standard
     
+    var center: UNUserNotificationCenter {
+        UNUserNotificationCenter.current()
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        center.getNotificationSettings { setting in
+            if setting.authorizationStatus != .authorized {
+                self.requestAuth()
+            }
+        }
         
         tableView.register(UINib(nibName: "NewFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "New Feed")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         updateData()
+    }
+    
+    func requestAuth() {
+        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        
+        center.requestAuthorization(options: options) { (didAllow, error) in
+        }
     }
     
     func updateData() {
