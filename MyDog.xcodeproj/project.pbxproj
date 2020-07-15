@@ -28,6 +28,7 @@
 		98164FAA24B37281006EDFDE /* Remainders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164FA924B37281006EDFDE /* Remainders.swift */; };
 		98164FAF24B489F5006EDFDE /* RemainderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164FAD24B489F5006EDFDE /* RemainderTableViewCell.swift */; };
 		98164FB024B489F5006EDFDE /* RemainderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98164FAE24B489F5006EDFDE /* RemainderTableViewCell.xib */; };
+		98164FB424BCF05C006EDFDE /* RemainderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164FB324BCF05C006EDFDE /* RemainderStore.swift */; };
 		98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD2192497642F001BAD93 /* AppDelegate.swift */; };
 		98FDD21E2497642F001BAD93 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD21D2497642F001BAD93 /* FirstViewController.swift */; };
 		98FDD2212497642F001BAD93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD21F2497642F001BAD93 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		98164FA924B37281006EDFDE /* Remainders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remainders.swift; sourceTree = "<group>"; };
 		98164FAD24B489F5006EDFDE /* RemainderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainderTableViewCell.swift; sourceTree = "<group>"; };
 		98164FAE24B489F5006EDFDE /* RemainderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemainderTableViewCell.xib; sourceTree = "<group>"; };
+		98164FB324BCF05C006EDFDE /* RemainderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainderStore.swift; sourceTree = "<group>"; };
 		98FDD2162497642F001BAD93 /* MyDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDD2192497642F001BAD93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98FDD21D2497642F001BAD93 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				98164FA924B37281006EDFDE /* Remainders.swift */,
+				98164FB324BCF05C006EDFDE /* RemainderStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				98FDD241249BAB8B001BAD93 /* AddPhotoViewController.swift in Sources */,
 				98164F9024AA0A08006EDFDE /* EventCell.swift in Sources */,
 				98164F9D24AE0C5F006EDFDE /* NewEventViewController.swift in Sources */,
+				98164FB424BCF05C006EDFDE /* RemainderStore.swift in Sources */,
 				98164F9A24AB5389006EDFDE /* NewFeedTableViewCell.swift in Sources */,
 				98164F8324A38B34006EDFDE /* InfoTableViewCell.swift in Sources */,
 				98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */,

@@ -13,7 +13,7 @@ class RemaindersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let defaults = UserDefaults.standard
-    var remaindersList = [Remainder]()
+    var remaindersList = RemainderStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +22,7 @@ class RemaindersViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let decoded = defaults.object(forKey: "RemaindersList") as? NSData {
-            let array = NSKeyedUnarchiver.unarchiveObject(with: decoded as Data) as! [Remainder]
-            remaindersList = array
-        }
+        remaindersList.loadFromUserDefault()
         tableView.reloadData()
     }
     
@@ -42,7 +39,7 @@ extension RemaindersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return remaindersList.count
+        return remaindersList.dataItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,9 +47,9 @@ extension RemaindersViewController: UITableViewDataSource {
         var cell: RemainderTableViewCell
         cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! RemainderTableViewCell
         
-        cell.nameLabel.text = remaindersList[indexPath.item].name
-        cell.dateLabel.text = remaindersList[indexPath.item].date
-        cell.timeLabel.text = remaindersList[indexPath.item].time
+        cell.nameLabel.text = remaindersList.dataItems[indexPath.item].name
+        cell.dateLabel.text = remaindersList.dataItems[indexPath.item].date
+        cell.timeLabel.text = remaindersList.dataItems[indexPath.item].time
         
         return cell
     }
@@ -62,6 +59,23 @@ extension RemaindersViewController: UITableViewDataSource {
 extension RemaindersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let action = UIAlertAction(title: "Выполнено", style: .default) { (action:UIAlertAction) in
+            self.remaindersList.removeItem(indexPath: indexPath)
+            tableView.reloadData()
+        }
+        let action2 = UIAlertAction(title: "Повторить", style: .default) { (action:UIAlertAction) in
+            //self.afterAlertLabel.isHidden = false
+        }
+        
+        alertController.addAction(action)
+        alertController.addAction(action2)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

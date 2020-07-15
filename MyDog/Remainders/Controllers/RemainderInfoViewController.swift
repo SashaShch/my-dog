@@ -23,7 +23,7 @@ class RemainderInfoViewController: UIViewController {
     let timePicker = UIDatePicker()
     
     let defaults = UserDefaults.standard
-    var remaindersList = [Remainder]()
+    var remaindersList = RemainderStore()
     var remainder = Remainder(name: "", date: "", time: "")
     var day: Int?
     var month: Int?
@@ -88,22 +88,9 @@ class RemainderInfoViewController: UIViewController {
         view.endEditing(true)
     }
     
-    func saveToUserDefault() {
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: remaindersList)
-        defaults.set(encodedData, forKey: "RemaindersList")
-    }
-    
-    func loadFromUserDefault() {
-        if let decoded = defaults.object(forKey: "RemaindersList") as? NSData {
-            let array = NSKeyedUnarchiver.unarchiveObject(with: decoded as Data) as! [Remainder]
-            remaindersList = array
-        }
-    }
     
     @objc func saveTapped() {
-        loadFromUserDefault()
-        remaindersList.append(remainder)
-        saveToUserDefault()
+        remaindersList.addItem(item: remainder)
         self.navigationController?.popViewController(animated: true)
         
         trigger()
