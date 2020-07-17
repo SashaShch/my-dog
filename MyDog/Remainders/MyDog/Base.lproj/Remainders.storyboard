@@ -75,7 +75,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Oby-r1-LGq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="MQJ-Y4-dGv" id="uw7-Lj-d1V"/>

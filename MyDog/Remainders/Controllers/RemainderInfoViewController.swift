@@ -30,6 +30,7 @@ class RemainderInfoViewController: UIViewController {
     var year: Int?
     var hour: Int?
     var minute: Int?
+
     
     
     override func viewDidLoad() {
@@ -50,6 +51,10 @@ class RemainderInfoViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveTapped))
+        
+        if remainder.name.count > 0 {
+            titleTextField.text = remainder.name
+        }
     }
     @objc func dateChanged() {
         getDataFromPicker()
@@ -122,6 +127,10 @@ class RemainderInfoViewController: UIViewController {
                 print(error!)
             }
         }
+    }
+    
+    func setReminderName(name: String) {
+        remainder.name = name
     }
 }
 

@@ -14,6 +14,7 @@ class RemaindersViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     var remaindersList = RemainderStore()
+    var isPassed = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +52,22 @@ extension RemaindersViewController: UITableViewDataSource {
         cell.dateLabel.text = remaindersList.dataItems[indexPath.item].date
         cell.timeLabel.text = remaindersList.dataItems[indexPath.item].time
         
+        
+        let input = remaindersList.dataItems[indexPath.item].date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        
+        if let date = formatter.date(from: input) {
+            
+            if date < Date() {
+                cell.backgroundColor = .red
+            } else {
+                cell.backgroundColor = .white
+                cell.isUserInteractionEnabled = false
+            }
+        }
         return cell
     }
-    
 }
 
 extension RemaindersViewController: UITableViewDelegate {
@@ -69,7 +83,13 @@ extension RemaindersViewController: UITableViewDelegate {
             tableView.reloadData()
         }
         let action2 = UIAlertAction(title: "Повторить", style: .default) { (action:UIAlertAction) in
-            //self.afterAlertLabel.isHidden = false
+            if let vc = self.storyboard?.instantiateViewController(identifier: "RemaindersInfo") as RemainderInfoViewController? {
+                vc.setReminderName(name: self.remaindersList.dataItems[indexPath.item].name)
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }
+            self.remaindersList.removeItem(indexPath: indexPath)
+            tableView.reloadData()
         }
         
         alertController.addAction(action)
@@ -79,3 +99,15 @@ extension RemaindersViewController: UITableViewDelegate {
     }
 }
 
+extension Date {
+    
+    func isBefore(_ date1: Date = Date(), _ date2: Date) -> Bool {
+        
+        let calendar = Calendar.current
+        
+        let dateComponents = calendar.dateComponents([.year, .month, .day], from: date1)
+        let selfComponents = calendar.dateComponents([.year, .month, .day], from: date2)
+        
+        return calendar.date(from: selfComponents)! < calendar.date(from: dateComponents)!
+    }
+}
