@@ -19,21 +19,6 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         addPhotoLabel.text = dog.name
-        
-        let rightButtonItem = UIBarButtonItem.init(
-            title: "Сохранить",
-            style: .done,
-            target: self,
-            action: #selector(rightButtonAction(sender:))
-        )
-        self.navigationItem.rightBarButtonItem = rightButtonItem
-    }
-    
-    @objc func rightButtonAction(sender: UIBarButtonItem){
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarController") as? TabBarViewController {
-            self.present(viewController, animated: true, completion: nil)
-        }
     }
     
     @IBAction func addPhotoButtonPressed(_ sender: Any) {
@@ -48,6 +33,14 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate 
             present(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarController") as? TabBarViewController {
+            self.present(viewController, animated: true, completion: nil)
+        }
+    }
+    
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

@@ -20,13 +20,13 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
     }
 
-
     @IBAction func nextButtonPressed(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "AddPhotoViewController") as! AddPhotoViewController
         dog.name = dogNameTextField.text ?? ""
         vc.dog = dog
         defaults.set(dog.name, forKey: "DogName")
-        navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true, completion: nil)
+        
     }
 }
 
