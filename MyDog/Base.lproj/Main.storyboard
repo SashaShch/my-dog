@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NlW-RH-tDh">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -10,7 +10,7 @@
         <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="FirstViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJk-8H-mqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="113"/>
+            <point key="canvasLocation" x="1810" y="113"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="823-Is-6bZ">
@@ -203,6 +203,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.62745098040000002" green="0.72549019609999998" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="Nxr-8y-75x" kind="relationship" relationship="viewControllers" id="rxW-8x-qeS"/>
@@ -260,7 +261,7 @@
         <scene sceneID="4di-mt-yeX">
             <objects>
                 <viewControllerPlaceholder storyboardName="NewsFeed" id="Nxr-8y-75x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="MwN-UF-CMB"/>
+                    <tabBarItem key="tabBarItem" title="" image="newFeedIcon" selectedImage="newFeedIcon" id="MwN-UF-CMB"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9L-6w-z1M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,5 +275,6 @@
         <image name="load" width="75" height="8"/>
         <image name="load1" width="75" height="8"/>
         <image name="myDog" width="70" height="41"/>
+        <image name="newFeedIcon" width="25" height="28"/>
     </resources>
 </document>

@@ -551,6 +551,7 @@
 			baseConfigurationReference = F2DEE669E2B50E0961BA3588 /* Pods-MyDog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74969M422Y;
 				INFOPLIST_FILE = MyDog/Info.plist;
@@ -560,6 +561,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sashaShch.MyDog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -570,6 +572,7 @@
 			baseConfigurationReference = 2FC0B11B944490884D1ED8F0 /* Pods-MyDog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74969M422Y;
 				INFOPLIST_FILE = MyDog/Info.plist;
@@ -579,6 +582,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sashaShch.MyDog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

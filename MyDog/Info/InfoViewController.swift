@@ -13,8 +13,13 @@ class InfoViewController: UIViewController {
     var info = Info()
     let defaults = UserDefaults.standard
     var isEditingInfo = false
-    let image = UIImage(systemName: "checkmark")
-    let image2 = UIImage(systemName: "pencil")
+    let image = UIImage(named: "infoCheckMark")
+    let image2 = UIImage(named: "infoPencil")
+    
+    let datePicker = UIDatePicker()
+    
+    var onDateChange: ((String) -> Void)?
+    var onAgeChange: ((String) -> Void)?
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -40,6 +45,18 @@ class InfoViewController: UIViewController {
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
         
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        
+    }
+    
+    @objc func dateChanged() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        let componenets = Calendar.current.dateComponents([.year, .month, .day], from: datePicker.date)
+        self.onDateChange?(formatter.string(from: datePicker.date))
+        let dataBirth = Calendar.current.date(from: DateComponents(year: componenets.year, month: componenets.month, day: componenets.day))!
+        let dogAge = String(dataBirth.age)
+        self.onAgeChange?(dogAge)
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -56,7 +73,7 @@ class InfoViewController: UIViewController {
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
     }
-    
+        
     @IBAction func editInfoButtonPressed(_ sender: Any) {
         view.endEditing(true)
         defaults.set(info.userInfo, forKey: "SavedDict")
@@ -83,8 +100,16 @@ extension InfoViewController: UITableViewDataSource {
         return info.headerInfo[section]
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor(red: 171/255, green: 201/255, blue: 197/255, alpha: 1)
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.textAlignment = .center
+        header.textLabel?.font = UIFont.systemFont(ofSize: 20.0)
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 40
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,14 +135,30 @@ extension InfoViewController: UITableViewDataSource {
         if let savedArray = defaults.object(forKey: "SavedDict") as? [String: String] {
             cell.userInfoTextField.text = savedArray[cell.infoLabel.text ?? ""]
         }
-        
        
         cell.userInfoTextField.isEnabled = isEditingInfo
         
         cell.layer.borderWidth = 5
         cell.layer.cornerRadius = 10
-        cell.layer.borderColor = UIColor(red: 217/255, green: 215/255, blue: 250/255, alpha: 1).cgColor
+        cell.layer.borderColor = UIColor(red: 171/255, green: 201/255, blue: 197/255, alpha: 1).cgColor
         cell.clipsToBounds = true
+        
+        cell.userInfoTextField.layer.cornerRadius = 8
+        
+        if cell.userInfoTextField.placeholder == "Дата рождения" {
+            cell.userInfoTextField.inputView = datePicker
+            datePicker.datePickerMode = .date
+            self.onDateChange = { value in
+                cell.userInfoTextField.text = value
+            }
+        }
+        
+       if cell.userInfoTextField.placeholder == "Возраст" {
+            self.onAgeChange = { value in
+                cell.userInfoTextField.text = value
+                self.info.userInfo["Возраст"] = value
+            }
+        }
         
         return cell
     }
@@ -129,7 +170,7 @@ extension InfoViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 85
     }
 }
 
@@ -139,3 +180,10 @@ extension InfoViewController: UITextFieldDelegate {
         info.userInfo[textField.placeholder ?? ""] = textField.text
     }
 }
+
+extension Date {
+    var age: Int {
+        return Calendar.current.dateComponents([.year], from: self, to: Date()).year!
+    }
+}
+

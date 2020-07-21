@@ -59,6 +59,9 @@ class EventInfoViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
+        if commentsTextView.text == "Добавить комментарий..." {
+            commentsTextView.text = ""
+        }
         
         createEvent(type: titleLable.text ?? "", time: dateLabel.text ?? "", comment: commentsTextView.text ?? "", photo: ((photoImage.image ?? UIImage(named: "emptyPhoto"))!))
         

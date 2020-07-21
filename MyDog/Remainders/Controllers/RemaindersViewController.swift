@@ -56,15 +56,18 @@ extension RemaindersViewController: UITableViewDataSource {
         let input = remaindersList.dataItems[indexPath.item].date
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
+        let currentDate = Date()
+        
         
         if let date = formatter.date(from: input) {
-            
-            if date < Date() {
+            if currentDate.compare(date) == .orderedDescending {
                 cell.backgroundColor = .red
+
             } else {
                 cell.backgroundColor = .white
                 cell.isUserInteractionEnabled = false
             }
+            
         }
         return cell
     }
@@ -105,8 +108,8 @@ extension Date {
         
         let calendar = Calendar.current
         
-        let dateComponents = calendar.dateComponents([.year, .month, .day], from: date1)
-        let selfComponents = calendar.dateComponents([.year, .month, .day], from: date2)
+        let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date1)
+        let selfComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date2)
         
         return calendar.date(from: selfComponents)! < calendar.date(from: dateComponents)!
     }

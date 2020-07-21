@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fWM-Tb-rvS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fWM-Tb-rvS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Информация-->
+        <!--Info View Controller-->
         <scene sceneID="dew-Nl-61T">
             <objects>
                 <viewController id="fWM-Tb-rvS" customClass="InfoViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,20 +18,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13R-QU-h14">
                                 <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivn-Ma-C3T">
-                                        <rect key="frame" x="10" y="10" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="1aF-gV-dJt"/>
-                                            <constraint firstAttribute="width" constant="45" id="RVJ-6J-2Bm"/>
-                                        </constraints>
-                                        <state key="normal" image="house.fill" catalog="system">
-                                            <color key="titleColor" red="0.41409801070000002" green="0.39760513460000002" blue="0.51686695780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Информация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZo-fQ-w9E">
-                                        <rect key="frame" x="139" y="13" width="136" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.41409801070000002" green="0.39760513460000002" blue="0.51686695780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="132.5" y="13" width="149" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rp-U1-DN1">
@@ -45,53 +35,58 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.85196189209999995" green="0.844910512" blue="0.98182445159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.62745098040000002" green="0.72549019609999998" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="Ivn-Ma-C3T" firstAttribute="top" secondItem="13R-QU-h14" secondAttribute="top" constant="10" id="7xf-0e-Yvr"/>
-                                    <constraint firstItem="Ivn-Ma-C3T" firstAttribute="leading" secondItem="13R-QU-h14" secondAttribute="leading" constant="10" id="CXg-gi-64M"/>
                                     <constraint firstAttribute="height" constant="70" id="HF7-cT-hRz"/>
                                     <constraint firstItem="kZo-fQ-w9E" firstAttribute="top" secondItem="13R-QU-h14" secondAttribute="top" constant="13" id="KDK-dz-Zpp"/>
+                                    <constraint firstItem="kZo-fQ-w9E" firstAttribute="centerY" secondItem="13R-QU-h14" secondAttribute="centerY" id="fps-yl-E7J"/>
                                     <constraint firstItem="kZo-fQ-w9E" firstAttribute="centerX" secondItem="13R-QU-h14" secondAttribute="centerX" id="fvP-SS-cnB"/>
                                     <constraint firstItem="0Rp-U1-DN1" firstAttribute="leading" relation="lessThanOrEqual" secondItem="kZo-fQ-w9E" secondAttribute="trailing" constant="99" id="hGp-aL-72W"/>
-                                    <constraint firstItem="kZo-fQ-w9E" firstAttribute="centerY" secondItem="Ivn-Ma-C3T" secondAttribute="centerY" id="j9Q-wJ-rXC"/>
                                     <constraint firstAttribute="trailing" secondItem="0Rp-U1-DN1" secondAttribute="trailing" constant="10" id="r1d-Zo-1xA"/>
                                     <constraint firstItem="0Rp-U1-DN1" firstAttribute="top" secondItem="13R-QU-h14" secondAttribute="top" constant="20" id="yw1-wv-Dyh"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="info cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xbh-Ef-2lH">
-                                <rect key="frame" x="0.0" y="114" width="405" height="748"/>
-                                <color key="backgroundColor" red="0.85098039219999999" green="0.84313725490000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="748"/>
+                                <color key="backgroundColor" red="0.6705882353" green="0.78823529410000004" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="info cell" rowHeight="65" id="Fwq-uP-0CC" customClass="InfoTableViewCell" customModule="MyDog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="405" height="65"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fwq-uP-0CC" id="JYW-aq-1QZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="405" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGl-Ci-T7l">
                                                     <rect key="frame" x="20" y="10" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rhk-77-jwz">
-                                                    <rect key="frame" x="20" y="36" width="365" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rhk-77-jwz">
+                                                    <rect key="frame" x="20" y="31" width="374" height="50"/>
+                                                    <color key="backgroundColor" red="0.83529411764705885" green="0.88627450980392153" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="r1J-5J-Nkh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="fWM-Tb-rvS" id="LdQ-Mf-ZqD"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.6705882353" green="0.78823529410000004" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Rhk-77-jwz" secondAttribute="trailing" constant="20" id="G5S-AY-TUO"/>
                                                 <constraint firstItem="DGl-Ci-T7l" firstAttribute="leading" secondItem="JYW-aq-1QZ" secondAttribute="leading" constant="20" id="Kzz-R6-KZ1"/>
                                                 <constraint firstItem="Rhk-77-jwz" firstAttribute="leading" secondItem="JYW-aq-1QZ" secondAttribute="leading" constant="20" id="W34-ET-1ow"/>
                                                 <constraint firstItem="DGl-Ci-T7l" firstAttribute="top" secondItem="JYW-aq-1QZ" secondAttribute="top" constant="10" id="c19-wS-fDq"/>
-                                                <constraint firstItem="Rhk-77-jwz" firstAttribute="top" secondItem="DGl-Ci-T7l" secondAttribute="bottom" constant="5" id="vZv-a0-GhL"/>
+                                                <constraint firstItem="Rhk-77-jwz" firstAttribute="top" secondItem="DGl-Ci-T7l" secondAttribute="bottom" id="vZv-a0-GhL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.6705882353" green="0.78823529410000004" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="infoLabel" destination="DGl-Ci-T7l" id="P78-U6-9ET"/>
                                             <outlet property="userInfoTextField" destination="Rhk-77-jwz" id="dQt-Al-m7I"/>
@@ -104,19 +99,19 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.62745098040000002" green="0.72549019609999998" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="xbh-Ef-2lH" firstAttribute="top" secondItem="13R-QU-h14" secondAttribute="bottom" id="BJW-jU-ye8"/>
                             <constraint firstItem="bBH-8h-abS" firstAttribute="top" secondItem="13R-QU-h14" secondAttribute="top" id="Ec1-TA-s6d"/>
                             <constraint firstItem="xbh-Ef-2lH" firstAttribute="leading" secondItem="bBH-8h-abS" secondAttribute="leading" id="II5-FL-2qD"/>
-                            <constraint firstItem="bBH-8h-abS" firstAttribute="trailing" secondItem="xbh-Ef-2lH" secondAttribute="trailing" constant="9" id="PX0-zk-nvR"/>
+                            <constraint firstItem="bBH-8h-abS" firstAttribute="trailing" secondItem="xbh-Ef-2lH" secondAttribute="trailing" id="PX0-zk-nvR"/>
                             <constraint firstItem="bBH-8h-abS" firstAttribute="trailing" secondItem="13R-QU-h14" secondAttribute="trailing" id="VRl-8H-KW2"/>
                             <constraint firstItem="13R-QU-h14" firstAttribute="leading" secondItem="bBH-8h-abS" secondAttribute="leading" id="kul-lw-nJz"/>
                             <constraint firstItem="bBH-8h-abS" firstAttribute="bottom" secondItem="xbh-Ef-2lH" secondAttribute="bottom" id="pNP-sL-hDs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bBH-8h-abS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Информация" id="HB0-wO-tjX"/>
+                    <tabBarItem key="tabBarItem" title="" image="infoIcon" selectedImage="infoIconSelected" id="HB0-wO-tjX"/>
                     <connections>
                         <outlet property="saveEditButton" destination="0Rp-U1-DN1" id="IGP-RB-sCo"/>
                         <outlet property="tableView" destination="xbh-Ef-2lH" id="a9J-Q0-MIY"/>
@@ -205,6 +200,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="infoIcon" width="28" height="28"/>
+        <image name="infoIconSelected" width="28" height="28"/>
     </resources>
 </document>

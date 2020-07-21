@@ -31,6 +31,13 @@ class InfoTableViewCell: UITableViewCell {
         
         accessoryView.addSubview(doneButton)
         userInfoTextField.inputAccessoryView = accessoryView
+        
+        userInfoTextField.layer.cornerRadius = 20
+        userInfoTextField.layer.borderWidth = 1
+        userInfoTextField.layer.borderColor = UIColor(red: 201/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
+        
+        userInfoTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: userInfoTextField.frame.height))
+        userInfoTextField.leftViewMode = .always
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

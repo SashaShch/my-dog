@@ -38,10 +38,12 @@ class RemainderInfoViewController: UIViewController {
         
         timeTextField.inputView = timePicker
         timePicker.datePickerMode = .time
+        timePicker.minimumDate = Date()
         timePicker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
         
         dateTextField.inputView = datePicker
         datePicker.datePickerMode = .date
+        datePicker.minimumDate = Date()
         let localeID = Locale.preferredLanguages.first
         datePicker.locale = Locale(identifier: localeID!)
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
@@ -95,10 +97,14 @@ class RemainderInfoViewController: UIViewController {
     
     
     @objc func saveTapped() {
-        remaindersList.addItem(item: remainder)
-        self.navigationController?.popViewController(animated: true)
-        
-        trigger()
+        if titleTextField.text?.isEmpty == false && dateTextField.text?.isEmpty == false && timeTextField.text?.isEmpty == false {
+            
+            remaindersList.addItem(item: remainder)
+            self.navigationController?.popViewController(animated: true)
+            
+            trigger()
+            
+        }
         
     }
     

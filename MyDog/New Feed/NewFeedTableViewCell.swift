@@ -16,9 +16,23 @@ class NewFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var dateCommentLabel: UILabel!
     @IBOutlet weak var eventPhotoImage: UIImageView!
     @IBOutlet weak var dogPhotoImage: UIImageView!
+    @IBOutlet weak var eventCommentLabel: UILabel!
+    
+    let cornerRadius = 20
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.layer.cornerRadius = 30
+        self.layer.masksToBounds = true
+        self.layer.borderColor = UIColor(red: 171/255, green: 201/255, blue: 197/255, alpha: 1).cgColor
+        self.layer.borderWidth = 15
+        
+        eventPhotoImage.layer.cornerRadius = eventPhotoImage.frame.width/20
+        eventPhotoImage.layer.masksToBounds = true
+        
+        dogPhotoImage.layer.cornerRadius = dogPhotoImage.frame.width / 2
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -24,7 +24,6 @@ class NewFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         center.getNotificationSettings { setting in
             if setting.authorizationStatus != .authorized {
                 self.requestAuth()
@@ -34,8 +33,17 @@ class NewFeedViewController: UIViewController {
         tableView.register(UINib(nibName: "NewFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "New Feed")
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        authDog()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         updateData()
+        
+        if events.isEmpty == true {
+            tableView.isHidden = true
+        }
     }
     
     func requestAuth() {
@@ -61,6 +69,14 @@ class NewFeedViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func authDog() {
+        if UserDefaults.standard.object(forKey: "DogName") == nil {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = mainStoryboard.instantiateViewController(withIdentifier: "FirstViewController") as! FirstViewController
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 
@@ -79,10 +95,12 @@ extension NewFeedViewController: UITableViewDataSource {
         
         let event = events[indexPath.item]
         cell.eventTypeLabel.text = event.value(forKey: "type") as? String
-        cell.dateCommentLabel.text = "\(event.value(forKey: "date") as! String) \(event.value(forKey: "comment") as! String)"
+        cell.dateCommentLabel.text = event.value(forKey: "date") as? String
+        cell.eventCommentLabel.text = event.value(forKey: "comment") as? String
         
         let data = event.value(forKey: "photo") as! Data
         let image = UIImage(data: data)
+
         cell.eventPhotoImage.image = image
         
         if let dogName = defaults.object(forKey: "DogName") as? String {
@@ -93,6 +111,7 @@ extension NewFeedViewController: UITableViewDataSource {
             let dogPhoto = UIImage(data: data)
             cell.dogPhotoImage.image = dogPhoto
         }
+                
         return cell
     }
 }

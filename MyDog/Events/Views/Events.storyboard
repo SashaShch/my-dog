@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q2e-vX-gk0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q2e-vX-gk0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--События-->
+        <!--Events View Controller-->
         <scene sceneID="Ztd-zU-TNB">
             <objects>
                 <viewController id="q2e-vX-gk0" customClass="EventsViewController" customModule="MyDog" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ulu-w2-sMy"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="События" id="K8r-xs-fmV"/>
+                    <tabBarItem key="tabBarItem" title="" image="eventIcon" selectedImage="eventIconSelected" id="K8r-xs-fmV"/>
                     <connections>
                         <outlet property="collectionView" destination="VTx-jT-GvH" id="Fge-Rg-ADp"/>
                     </connections>
@@ -322,6 +322,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eventIcon" width="30" height="31"/>
+        <image name="eventIconSelected" width="30" height="31"/>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>
