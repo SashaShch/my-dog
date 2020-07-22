@@ -29,6 +29,7 @@
 		98164FAF24B489F5006EDFDE /* RemainderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164FAD24B489F5006EDFDE /* RemainderTableViewCell.swift */; };
 		98164FB024B489F5006EDFDE /* RemainderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98164FAE24B489F5006EDFDE /* RemainderTableViewCell.xib */; };
 		98164FB424BCF05C006EDFDE /* RemainderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98164FB324BCF05C006EDFDE /* RemainderStore.swift */; };
+		983B55E524C78DD70075257C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983B55E424C78DD70075257C /* SettingsViewController.swift */; };
 		98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD2192497642F001BAD93 /* AppDelegate.swift */; };
 		98FDD21E2497642F001BAD93 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDD21D2497642F001BAD93 /* FirstViewController.swift */; };
 		98FDD2212497642F001BAD93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDD21F2497642F001BAD93 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		98164FAD24B489F5006EDFDE /* RemainderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainderTableViewCell.swift; sourceTree = "<group>"; };
 		98164FAE24B489F5006EDFDE /* RemainderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemainderTableViewCell.xib; sourceTree = "<group>"; };
 		98164FB324BCF05C006EDFDE /* RemainderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainderStore.swift; sourceTree = "<group>"; };
+		983B55E424C78DD70075257C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		98FDD2162497642F001BAD93 /* MyDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDD2192497642F001BAD93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98FDD21D2497642F001BAD93 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				98FDD25924A0E2DD001BAD93 /* Settings.storyboard */,
+				983B55E424C78DD70075257C /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				98FDD21A2497642F001BAD93 /* AppDelegate.swift in Sources */,
 				98164F8524A38C46006EDFDE /* InfoModel.swift in Sources */,
 				98164F9724AB3AC0006EDFDE /* DogsEvent.swift in Sources */,
+				983B55E524C78DD70075257C /* SettingsViewController.swift in Sources */,
 				98164FAA24B37281006EDFDE /* Remainders.swift in Sources */,
 				98FDD24E24A0E087001BAD93 /* TabBarViewController.swift in Sources */,
 				98FDD25D24A0F71C001BAD93 /* NewFeedViewController.swift in Sources */,

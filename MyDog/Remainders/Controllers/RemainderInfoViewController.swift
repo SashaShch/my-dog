@@ -113,7 +113,7 @@ class RemainderInfoViewController: UIViewController {
         content.title = "My Dog"
         content.body = titleTextField.text ?? ""
         content.sound = .default
-        content.badge = 42
+        content.badge = 1
         
         var monthly = DateComponents()
         monthly.hour = hour

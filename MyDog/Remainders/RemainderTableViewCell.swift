@@ -16,7 +16,12 @@ class RemainderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.layer.cornerRadius = 30
+        self.layer.masksToBounds = true
+        self.layer.borderColor = UIColor(red: 171/255, green: 201/255, blue: 197/255, alpha: 1).cgColor
+        self.layer.borderWidth = 15
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

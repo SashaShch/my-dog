@@ -20,6 +20,14 @@ class RemaindersViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "RemainderTableViewCell", bundle: nil), forCellReuseIdentifier: "New Remainder")
+        
+        let imgView =  UIImageView(frame: self.tableView.frame)
+        let img = UIImage(named: "backWithBones")
+        imgView.image = img
+        imgView.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height)
+        imgView.contentMode = UIView.ContentMode.scaleAspectFill
+        self.tableView.addSubview(imgView)
+        self.tableView.sendSubviewToBack(imgView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,10 +69,10 @@ extension RemaindersViewController: UITableViewDataSource {
         
         if let date = formatter.date(from: input) {
             if currentDate.compare(date) == .orderedDescending {
-                cell.backgroundColor = .red
+                cell.backgroundColor = UIColor(red: 188/255, green: 211/255, blue: 208/255, alpha: 1)
 
             } else {
-                cell.backgroundColor = .white
+                cell.backgroundColor = UIColor(red: 213/255, green: 226/255, blue: 224/255, alpha: 1)
                 cell.isUserInteractionEnabled = false
             }
             
@@ -75,7 +83,7 @@ extension RemaindersViewController: UITableViewDataSource {
 
 extension RemaindersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

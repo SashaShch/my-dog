@@ -12,10 +12,12 @@ class DogsEvent {
     var title: String
     let date: String
     let comment: String
+    let image: String
     
-    init(title: String, date: String, comment: String) {
+    init(title: String, date: String, comment: String, image: String) {
         self.title = title
         self.date = date
         self.comment = comment
+        self.image = image
     }
 }

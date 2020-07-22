@@ -11,30 +11,70 @@ import CoreData
 
 class EventInfoViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     
-    var dogsEvent = DogsEvent(title: "", date: "", comment: "")
+    var dogsEvent = DogsEvent(title: "", date: "", comment: "", image: "")
     var goToNewFeed: (() -> Void)?
+    let commentConstraint = 270
 
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var commentsTextView: UITextView!
     @IBOutlet weak var photoImage: UIImageView!
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var commentBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let accessoryView = UIView()
+        accessoryView.backgroundColor = .lightGray
+        accessoryView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 32)
+        
+        let doneButton = UIButton()
+        doneButton.addTarget(self, action: #selector(accessoryDonePressed), for: .touchUpInside)
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.frame = CGRect(x: 0, y: 0, width: 100, height: 32)
+        
+        accessoryView.addSubview(doneButton)
+        commentsTextView.inputAccessoryView = accessoryView
+        
+        commentsTextView.layer.cornerRadius = 20
+        commentsTextView.layer.borderWidth = 1
+        commentsTextView.layer.borderColor = UIColor(red: 201/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
+        
         titleLable.text = dogsEvent.title
+        eventImage.image = UIImage(named: dogsEvent.image)
+        
+        addPhotoButton.layer.cornerRadius = addPhotoButton.frame.width / 2
+        addPhotoButton.clipsToBounds = true
+        addPhotoButton.layer.borderWidth = 1
+        addPhotoButton.layer.borderColor = UIColor(red: 201/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
+        
+        photoImage.layer.cornerRadius = addPhotoButton.frame.width / 2
+        photoImage.clipsToBounds = true
         
         let date = NSDate()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy hh:mm"
         let dateString = dateFormatter.string(from: date as Date)
-        dateLabel.text = "\(dateString)"
+        dateLabel.text = dateString
         
         commentsTextView.text = "Добавить комментарий..."
         commentsTextView.textColor = UIColor.lightGray
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(_:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
 
     }
     
-    func createEvent(type: String, time: String, comment: String, photo: UIImage) {
+    func createEvent(type: String, time: String, comment: String, photo: UIImage?) {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             
@@ -42,17 +82,34 @@ class EventInfoViewController: UIViewController, UIImagePickerControllerDelegate
                 
                 let event = NSManagedObject(entity: eventEntity, insertInto: context) as! Event
                 
-                let data = photo.pngData()
-                
                 event.type = type
                 event.date = time
                 event.comment = comment
                 
-                event.photo = data
+                event.photo = photo?.pngData()
                 
                 try? context.save()
             }
         }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        
+        if let userInfo = notification.userInfo {
+            if let keyboardFrame = userInfo["UIKeyboardFrameEndUserInfoKey"] as? CGRect {
+                commentBottomConstraint.constant = keyboardFrame.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        
+        commentBottomConstraint.constant = CGFloat(commentConstraint)
+        
+    }
+    
+    @objc func accessoryDonePressed() {
+        commentsTextView.endEditing(true)
+    }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -63,7 +120,7 @@ class EventInfoViewController: UIViewController, UIImagePickerControllerDelegate
             commentsTextView.text = ""
         }
         
-        createEvent(type: titleLable.text ?? "", time: dateLabel.text ?? "", comment: commentsTextView.text ?? "", photo: ((photoImage.image ?? UIImage(named: "emptyPhoto"))!))
+        createEvent(type: titleLable.text ?? "", time: dateLabel.text ?? "", comment: commentsTextView.text ?? "", photo: photoImage.image)
         
         goToNewFeed?()
     }
@@ -86,6 +143,7 @@ class EventInfoViewController: UIViewController, UIImagePickerControllerDelegate
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            addPhotoButton.setImage(image, for: .normal)
             photoImage.image = image
             dismiss(animated:true, completion: nil)
         }

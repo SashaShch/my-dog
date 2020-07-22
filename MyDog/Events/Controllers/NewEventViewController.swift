@@ -10,13 +10,19 @@ import UIKit
 
 class NewEventViewController: UIViewController {
 
-    var dogsEvent = DogsEvent(title: "", date: "", comment: "")
+    var dogsEvent = DogsEvent(title: "", date: "", comment: "", image: "eventCustom")
     
     @IBOutlet weak var newEventTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        newEventTextField.layer.cornerRadius = 20
+        newEventTextField.layer.borderWidth = 1
+        newEventTextField.layer.borderColor = UIColor(red: 201/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
+        
+        newEventTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: newEventTextField.frame.height))
+        newEventTextField.leftViewMode = .always
 
     }
 

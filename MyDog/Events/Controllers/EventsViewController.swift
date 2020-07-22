@@ -18,33 +18,34 @@ class EventsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
-
+    
 }
 
 
 extension EventsViewController: UICollectionViewDataSource {
-
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         return events.count()
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //let item = CatModel.itemList[indexPath.section][indexPath.item]
+        let item = events.events[indexPath.item]
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Event Cell", for: indexPath) as! EventCell
         
-        cell.eventLabel.text = events.events[indexPath.item].title
-        //cell.imageView.image = UIImage(named: item.name)
+        cell.eventLabel.text = item.title
+        let image = UIImage(named: item.image)
+            cell.eventImage.image = image
         
         return cell
     }
@@ -96,6 +97,6 @@ extension EventsViewController: UICollectionViewDelegate {
             }
             present(vc, animated: true, completion: nil)
             
-            }
+        }
     }
 }

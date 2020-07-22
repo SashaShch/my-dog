@@ -39,7 +39,6 @@
                         <constraints>
                             <constraint firstItem="S9N-67-mf0" firstAttribute="top" secondItem="Fx2-C8-LYl" secondAttribute="top" constant="67.5" id="7Wt-Lg-Yu0"/>
                             <constraint firstAttribute="trailing" secondItem="S9N-67-mf0" secondAttribute="trailing" constant="141" id="HGE-L6-t44"/>
-                            <constraint firstAttribute="bottom" secondItem="S9N-67-mf0" secondAttribute="bottom" constant="211" id="LMO-QE-w1U"/>
                             <constraint firstItem="ZWP-wQ-a04" firstAttribute="top" secondItem="Fx2-C8-LYl" secondAttribute="top" id="Mgo-rg-sZb"/>
                             <constraint firstItem="ZWP-wQ-a04" firstAttribute="leading" secondItem="Fx2-C8-LYl" secondAttribute="leading" id="fv0-i0-55K"/>
                             <constraint firstAttribute="trailing" secondItem="ZWP-wQ-a04" secondAttribute="trailing" id="gTi-1v-nPL"/>

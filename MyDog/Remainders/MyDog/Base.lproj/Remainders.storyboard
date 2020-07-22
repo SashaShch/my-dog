@@ -15,16 +15,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fMV-8w-TbT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backWithBones" translatesAutoresizingMaskIntoConstraints="NO" id="STb-d2-Npf">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.6705882353" green="0.78823529410000004" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fMV-8w-TbT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.6705882353" green="0.78823529410000004" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="New Remainder" id="g1n-2n-kSB">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g1n-2n-kSB" id="WJn-X0-Gfi">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.83529411760000005" green="0.8862745098" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -34,18 +39,22 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.62745098040000002" green="0.72549019609999998" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="4k1-0B-FFt" firstAttribute="bottom" secondItem="fMV-8w-TbT" secondAttribute="bottom" id="08T-H0-bnO"/>
+                            <constraint firstItem="STb-d2-Npf" firstAttribute="leading" secondItem="4k1-0B-FFt" secondAttribute="leading" id="0VW-jS-xlv"/>
+                            <constraint firstItem="STb-d2-Npf" firstAttribute="top" secondItem="4k1-0B-FFt" secondAttribute="top" id="1H5-QP-ChM"/>
+                            <constraint firstItem="4k1-0B-FFt" firstAttribute="bottom" secondItem="STb-d2-Npf" secondAttribute="bottom" id="Mfm-vF-VOA"/>
                             <constraint firstItem="4k1-0B-FFt" firstAttribute="trailing" secondItem="fMV-8w-TbT" secondAttribute="trailing" id="NcH-aI-MaN"/>
                             <constraint firstItem="fMV-8w-TbT" firstAttribute="leading" secondItem="4k1-0B-FFt" secondAttribute="leading" id="OTM-7X-ONP"/>
+                            <constraint firstItem="4k1-0B-FFt" firstAttribute="trailing" secondItem="STb-d2-Npf" secondAttribute="trailing" id="TlH-kU-MMC"/>
                             <constraint firstItem="fMV-8w-TbT" firstAttribute="top" secondItem="4k1-0B-FFt" secondAttribute="top" id="i9e-4d-3bM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4k1-0B-FFt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Напоминания" id="Prd-Ik-IIb">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="NiU-l0-3SE">
-                            <color key="tintColor" red="0.41409801070000002" green="0.39760513460000002" blue="0.51686695780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="M3n-f1-FoW" id="aGs-QS-gDp"/>
                             </connections>
@@ -124,15 +133,22 @@
             </objects>
             <point key="canvasLocation" x="5018.840579710145" y="-36.160714285714285"/>
         </scene>
-        <!--Напоминания-->
+        <!--Navigation Controller-->
         <scene sceneID="Ze4-fp-zAQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lPk-Pg-wPZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Напоминания" id="q7d-q1-2T4"/>
+                    <tabBarItem key="tabBarItem" title="" image="remainderIcon" selectedImage="remainderIconSelected" id="q7d-q1-2T4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2su-0S-mbm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.62745098040000002" green="0.72549019609999998" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.62745098040000002" green="0.72549019609999998" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.62745098040000002" green="0.72549019609999998" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -145,6 +161,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backWithBones" width="319" height="667"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="remainderIcon" width="23" height="29"/>
+        <image name="remainderIconSelected" width="23" height="29"/>
     </resources>
 </document>
