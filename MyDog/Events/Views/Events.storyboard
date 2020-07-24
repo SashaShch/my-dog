@@ -139,6 +139,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="cancelButtonPressed:" destination="WHX-Cl-Tsl" eventType="touchUpInside" id="iU9-3o-fSP"/>
                                             <action selector="cancelButtonPressed:" destination="L4s-kp-yoG" eventType="touchUpInside" id="zcf-fR-DlK"/>
                                         </connections>
                                     </button>
@@ -263,6 +264,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1x-bG-7rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="WHX-Cl-Tsl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4163.768115942029" y="-60.267857142857139"/>
         </scene>
@@ -283,6 +285,9 @@
                                         <state key="normal" title="Отмена">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="F7K-kB-3sy" eventType="touchUpInside" id="ZJG-7R-6F4"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новое событие" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKc-XT-214">
                                         <rect key="frame" x="137" y="23" width="140" height="24"/>

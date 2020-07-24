@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NlW-RH-tDh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NlW-RH-tDh">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -231,7 +231,7 @@
         <scene sceneID="10a-Gp-7x4">
             <objects>
                 <viewControllerPlaceholder storyboardName="Remainders" id="yuS-hu-NwL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="AJP-yV-Vst"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="remainderIcon" selectedImage="remainderIconSelected" id="AJP-yV-Vst"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ml-35-JI5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,5 +276,7 @@
         <image name="load1" width="75" height="8"/>
         <image name="myDog" width="70" height="41"/>
         <image name="newFeedIcon" width="25" height="28"/>
+        <image name="remainderIcon" width="23" height="29"/>
+        <image name="remainderIconSelected" width="23" height="29"/>
     </resources>
 </document>

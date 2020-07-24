@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class RemaindersViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -39,7 +40,7 @@ class RemaindersViewController: UIViewController {
     
     @IBAction func addButtonPressed(_ sender: Any) {
         if let vc = self.storyboard?.instantiateViewController(identifier: "RemaindersInfo") as RemainderInfoViewController? {
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: true, completion: nil)
         }
     }
 }
@@ -61,19 +62,26 @@ extension RemaindersViewController: UITableViewDataSource {
         cell.timeLabel.text = remaindersList.dataItems[indexPath.item].time
         
         
-        let input = remaindersList.dataItems[indexPath.item].date
+        let input = remaindersList.dataItems[indexPath.item].date + " " + remaindersList.dataItems[indexPath.item].time
+        
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
+        formatter.dateFormat = "MM-dd-yyyy HH:mm"
         let currentDate = Date()
         
-        
         if let date = formatter.date(from: input) {
-            if currentDate.compare(date) == .orderedDescending {
+            
+            if currentDate >= date {
                 cell.backgroundColor = UIColor(red: 188/255, green: 211/255, blue: 208/255, alpha: 1)
-
+                cell.nameLabel.textColor = .white
+                cell.dateLabel.textColor = .white
+                cell.timeLabel.textColor = .white
+                
             } else {
                 cell.backgroundColor = UIColor(red: 213/255, green: 226/255, blue: 224/255, alpha: 1)
                 cell.isUserInteractionEnabled = false
+                cell.nameLabel.textColor = UIColor(red: 95/255, green: 110/255, blue: 118/255, alpha: 1)
+                cell.dateLabel.textColor = UIColor(red: 95/255, green: 110/255, blue: 118/255, alpha: 1)
+                cell.timeLabel.textColor = UIColor(red: 95/255, green: 110/255, blue: 118/255, alpha: 1)
             }
             
         }

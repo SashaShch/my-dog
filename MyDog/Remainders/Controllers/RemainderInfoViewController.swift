@@ -14,7 +14,7 @@ class RemainderInfoViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
-
+    
     
     var center: UNUserNotificationCenter {
         UNUserNotificationCenter.current()
@@ -30,16 +30,26 @@ class RemainderInfoViewController: UIViewController {
     var year: Int?
     var hour: Int?
     var minute: Int?
-
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleTextField.layer.cornerRadius = 20
+        titleTextField.layer.borderWidth = 1
+        titleTextField.clipsToBounds = true
+        titleTextField.layer.borderColor = UIColor(red: 201/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
+        
         timeTextField.inputView = timePicker
         timePicker.datePickerMode = .time
         timePicker.minimumDate = Date()
         timePicker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
+        
+        timeTextField.layer.cornerRadius = 20
+        timeTextField.layer.borderWidth = 1
+        timeTextField.clipsToBounds = true
+        timeTextField.layer.borderColor = UIColor(red: 201/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
         
         dateTextField.inputView = datePicker
         datePicker.datePickerMode = .date
@@ -47,12 +57,17 @@ class RemainderInfoViewController: UIViewController {
         let localeID = Locale.preferredLanguages.first
         datePicker.locale = Locale(identifier: localeID!)
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
-                
+        
+        dateTextField.layer.cornerRadius = 20
+        dateTextField.layer.borderWidth = 1
+        dateTextField.clipsToBounds = true
+        dateTextField.layer.borderColor = UIColor(red: 201/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
+        
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         self.view.addGestureRecognizer(tapGesture)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveTapped))
+
         
         if remainder.name.count > 0 {
             titleTextField.text = remainder.name
@@ -96,17 +111,7 @@ class RemainderInfoViewController: UIViewController {
     }
     
     
-    @objc func saveTapped() {
-        if titleTextField.text?.isEmpty == false && dateTextField.text?.isEmpty == false && timeTextField.text?.isEmpty == false {
-            
-            remaindersList.addItem(item: remainder)
-            self.navigationController?.popViewController(animated: true)
-            
-            trigger()
-            
-        }
-        
-    }
+
     
     func trigger() {
         let content = UNMutableNotificationContent()
@@ -138,6 +143,20 @@ class RemainderInfoViewController: UIViewController {
     func setReminderName(name: String) {
         remainder.name = name
     }
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        if titleTextField.text?.isEmpty == false && dateTextField.text?.isEmpty == false && timeTextField.text?.isEmpty == false {
+            
+            remaindersList.addItem(item: remainder)
+            self.dismiss(animated: true, completion: nil)
+            
+            trigger()
+        }
+    }
 }
 
 extension RemainderInfoViewController: UITextFieldDelegate {
@@ -145,3 +164,4 @@ extension RemainderInfoViewController: UITextFieldDelegate {
         remainder.name = titleTextField.text ?? ""
     }
 }
+

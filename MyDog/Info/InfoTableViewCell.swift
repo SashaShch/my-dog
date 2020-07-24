@@ -21,12 +21,12 @@ class InfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         let accessoryView = UIView()
-        accessoryView.backgroundColor = .lightGray
+        accessoryView.backgroundColor = UIColor(red: 161/255, green: 184/255, blue: 198/255, alpha: 1)
         accessoryView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 32)
         
         let doneButton = UIButton()
         doneButton.addTarget(self, action: #selector(accessoryDonePressed), for: .touchUpInside)
-        doneButton.setTitle("Done", for: .normal)
+        doneButton.setTitle("Готово", for: .normal)
         doneButton.frame = CGRect(x: 0, y: 0, width: 100, height: 32)
         
         accessoryView.addSubview(doneButton)

@@ -46,6 +46,8 @@ class NewFeedViewController: UIViewController {
         
         if events.isEmpty == true {
             tableView.isHidden = true
+        } else {
+            tableView.isHidden = false
         }
     }
     

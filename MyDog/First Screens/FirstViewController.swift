@@ -18,6 +18,22 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let accessoryView = UIView()
+        accessoryView.backgroundColor = UIColor(red: 161/255, green: 184/255, blue: 198/255, alpha: 1)
+        accessoryView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 32)
+        
+        let doneButton = UIButton()
+        doneButton.addTarget(self, action: #selector(accessoryDonePressed), for: .touchUpInside)
+        doneButton.setTitle("Готово", for: .normal)
+        doneButton.frame = CGRect(x: 0, y: 0, width: 100, height: 32)
+        
+        accessoryView.addSubview(doneButton)
+        dogNameTextField.inputAccessoryView = accessoryView
+    }
+    
+    @objc func accessoryDonePressed() {
+        dogNameTextField.endEditing(true)
     }
 
     @IBAction func nextButtonPressed(_ sender: Any) {

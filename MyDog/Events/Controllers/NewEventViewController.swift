@@ -16,6 +16,9 @@ class NewEventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
+        self.view.addGestureRecognizer(tapGesture)
 
         newEventTextField.layer.cornerRadius = 20
         newEventTextField.layer.borderWidth = 1
@@ -25,7 +28,15 @@ class NewEventViewController: UIViewController {
         newEventTextField.leftViewMode = .always
 
     }
+    
+    @objc func tapGestureDone() {
+        view.endEditing(true)
+    }
 
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func nextButtonPressed(_ sender: Any) {
         view.endEditing(true)
         if let vc = self.storyboard?.instantiateViewController(identifier: "EventInfoViewController") as EventInfoViewController? {
